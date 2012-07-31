@@ -1,0 +1,13 @@
+*~
+*.orig
+*.pyc
+*.pyo
+*.rej
+*.swp
+*.swo
+build/
+.project
+.idea/*
+__MACOSX/*
+.ropeproject
+.coverage
