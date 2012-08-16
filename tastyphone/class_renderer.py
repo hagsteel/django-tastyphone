@@ -4,6 +4,7 @@ import os
 from tastyphone.file_manager import FileManager
 from django.utils.datetime_safe import datetime
 
+
 class ClassRenderer(object):
 
     def __init__(self, company_name=None):
@@ -11,7 +12,7 @@ class ClassRenderer(object):
         self.file_manager = FileManager()
         pass
 
-    def add_default_context(self,context):
+    def add_default_context(self, context):
         context['company_name'] = self.company_name
         context['date_day'] = datetime.now().day
         context['date_month'] = datetime.now().month
@@ -19,9 +20,9 @@ class ClassRenderer(object):
         return context
 
     def render_model(self, model):
-        context = Context({'model_name':model.name,
-                     'objects':model.objects,
-                     'primitives':model.primitives,
+        context = Context({'model_name': model.name,
+                     'objects': model.objects,
+                     'primitives': model.primitives,
         })
 
         context = self.add_default_context(context)
@@ -37,7 +38,7 @@ class ClassRenderer(object):
         self.file_manager.write_file_to_disk(self.file_manager.get_models_dir(), model.get_header_name(), class_header_data)
 
     def render_object_map_factory(self, models):
-        context = Context({'model_headers':[m.get_header_name() for m in models], 'models':[m.name for m in models]})
+        context = Context({'model_headers': [m.get_header_name() for m in models], 'models': [m.name for m in models]})
         context = self.add_default_context(context)
 
         class_template = get_template('class_scaffolding/object_mapper_factory.m.txt')
@@ -58,10 +59,10 @@ class ClassRenderer(object):
 
     def render_object_map(self, model):
         map_name = '%sMap' % model.name
-        context = Context({'map_name':map_name,
-                           'model_name':model.name,
-                           'objects':model.objects,
-                           'primitives':model.primitives})
+        context = Context({'map_name': map_name,
+                           'model_name': model.name,
+                           'objects': model.objects,
+                           'primitives': model.primitives})
         context = self.add_default_context(context)
 
         object_map_template = get_template('class_scaffolding/object_map.m.txt')
@@ -73,13 +74,13 @@ class ClassRenderer(object):
         self.file_manager.write_file_to_disk(self.file_manager.get_object_maps_dir(), '%s.h' % map_name, object_map_data)
 
     def render_api_command(self, model):
-        context = Context({'model_name':model.name,
-                           'instance_name':'a%s' % model.name,
-                           'objects':model.objects,
-                           'allowed_list_methods':model.allowed_list_http_methods,
-                           'allowed_detailed_methods':model.allowed_detailed_http_methods,
-                           'endpoint':model.endpoint,
-                           'primitives':model.primitives})
+        context = Context({'model_name': model.name,
+                           'instance_name': 'a%s' % model.name,
+                           'objects': model.objects,
+                           'allowed_list_methods': model.allowed_list_http_methods,
+                           'allowed_detailed_methods': model.allowed_detailed_http_methods,
+                           'endpoint': model.endpoint,
+                           'primitives': model.primitives})
         context = self.add_default_context(context)
 
         command_template = get_template('class_scaffolding/api_command.m.txt')

@@ -6,6 +6,7 @@ from tastyphone.class_renderer import ClassRenderer
 from tastyphone.file_manager import FileManager
 from tastyphone.models import Model
 
+
 class Command(BaseCommand):
     args = '<stuffy...>'
     help = 'Hello, this is a help'
@@ -20,10 +21,9 @@ class Command(BaseCommand):
         )
 
     def __init__(self):
-        super(Command,self).__init__()
+        super(Command, self).__init__()
         self.class_renderer = ClassRenderer()
         self.file_manager = FileManager()
-
 
     def handle(self, *args, **options):
         response = Client().get('/api/v1/?format=json')

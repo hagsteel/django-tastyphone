@@ -1,5 +1,6 @@
 import os
 
+
 class FileManager(object):
 
     _model_dir = 'models'
@@ -9,19 +10,25 @@ class FileManager(object):
     _helpers_dir = 'helpers'
 
     def get_filename(self, directory, filename):
-        return os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, directory, filename))
+        return os.path.abspath(os.path.join(os.path.dirname(__file__),
+            os.pardir,
+            directory,
+            filename))
 
     def write_file_to_disk(self, directory, file_name, data):
         if file_name.rfind('.txt') > 0:
             file_name = file_name[0:file_name.rfind('.txt')]
-        f = open(self.get_filename(self.get_or_create_directory(directory), file_name), 'w')
+        f = open(self.get_filename(self.get_or_create_directory(directory),
+            file_name),
+            'w')
         f.writelines(data)
 
     def format_filename(self, file_name):
-        return file_name.title().replace('_','')
+        return file_name.title().replace('_', '')
 
     def get_or_create_directory(self, dir):
-        dir = os.path.join(os.path.dirname(__file__), os.path.join(self._root_dir, dir))
+        dir = os.path.join(os.path.dirname(__file__),
+            os.path.join(self._root_dir, dir))
         if not os.path.exists(dir):
             os.makedirs(dir)
         return dir

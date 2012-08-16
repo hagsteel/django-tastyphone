@@ -6,6 +6,7 @@ import re
 
 register = template.Library()
 
+
 class FacelessNode(Node):
     def __init__(self, nodelist):
         self.nodelist = nodelist
@@ -21,12 +22,12 @@ class FacelessNode(Node):
                 outlist.append(element.rstrip())
 
         out = '\n'.join(outlist)
-        out = out.replace('}','}\n')
+        out = out.replace('}', '}\n')
 
         return force_unicode(out)
 
 
-@register.filter(name='data_binding',needs_autoescape=False,is_safe=False)
+@register.filter(name='data_binding', needs_autoescape=False, is_safe=False)
 def data_binding(field):
     if field['type'] == 'NSString':
         return mark_safe('[data objectForKey:@"%s"]' % field['original_name'])
@@ -39,12 +40,14 @@ def data_binding(field):
 
         return mark_safe('[data objectForKey:@"%s"] // this might need attention' % field['original_name'])
 
-@register.filter(name='writable_fields',needs_autoescape=False,is_safe=False)
+
+@register.filter(name='writable_fields', needs_autoescape=False, is_safe=False)
 def writable_fields(fields):
     return [f for f in fields if f['is_readonly'] == False]
 
-@register.filter(name='to_nsstring',needs_autoescape=False,is_safe=False)
-def to_nsstring(field,prefix=None):
+
+@register.filter(name='to_nsstring', needs_autoescape=False, is_safe=False)
+def to_nsstring(field, prefix=None):
     if prefix is not None:
         prefix = '%s.' % prefix
     else:
@@ -60,6 +63,7 @@ def to_nsstring(field,prefix=None):
         return mark_safe('[NSString stringWithFormat:@"%%@", [NSDate stringFromDate:%s%s]]' % (prefix, field['field_name']))
 
     return 'MISSING'
+
 
 @register.tag(name='format_code')
 def format_code(parser, token):
