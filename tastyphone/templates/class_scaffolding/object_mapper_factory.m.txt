@@ -1,0 +1,43 @@
+{% include "class_heading.txt" %}
+
+#import "ObjectMapperFactory.h"
+
+
+//////////////////////////////////
+// Shared Instance
+
+static ObjectMapperFactory* sharedObjectMapper = nil;
+
+///////////////////////////////////
+
+@implementation ObjectMapperFactory
+
+- (id)init {
+	if ((self = [super init])) {
+		NSArray *values = [NSArray arrayWithObjects:{% for m in models %}
+                           [{{m}} new],{% endfor %} nil];
+
+		NSArray *keys = [NSArray arrayWithObjects:{% for m in models %}
+                         [{{m}} class],{% endfor %} nil];
+
+		_objectMaps = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+	}
+	return self;
+}
+
++ (ObjectMapperFactory*)sharedInstance {
+	if (sharedObjectMapper == nil)
+		sharedObjectMapper = [[ObjectMapperFactory alloc] init];
+
+	return sharedObjectMapper;
+}
+
+- (id<ObjectMapProtocol>)getMapperForClass:(Class)theClass {
+	for (Class c in [_objectMaps allKeys]) {
+		if (c == theClass)
+			return (id<ObjectMapProtocol>)[_objectMaps objectForKey:c];
+	}
+
+	return nil;
+}
+@end

@@ -1,0 +1,15 @@
+{% include "class_heading.txt" %}
+
+#import <Foundation/Foundation.h>
+#import "ObjectMapProtocol.h"
+{% for h in model_headers %}
+#import "{{h}}"{% endfor %}
+
+@interface ObjectMapperFactory : NSObject {
+	NSDictionary *_objectMaps;
+}
+
++ (ObjectMapperFactory*)sharedInstance;
+
+- (id<ObjectMapProtocol>)getMapperForClass:(Class)theClass;
+@end

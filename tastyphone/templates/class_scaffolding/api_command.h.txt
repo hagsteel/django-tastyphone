@@ -1,0 +1,37 @@
+{% include "class_heading.txt" %}
+{% load data_binding %}
+
+{% format_code %}
+#import "ApiBaseCommand.h"
+#import "{{ model_name }}.h"
+
+@interface {{ model_name }}Command : ApiBaseCommand {
+}
+{% for m in allowed_list_methods %}
+{% if m == 'get' %}
+- (void)get{{ model_name }}List;
+{% endif %}
+{% endfor %}
+
+{% for m in allowed_detailed_methods %}
+{% if m == 'get' %}
+- (void)get{{ model_name }}:(NSString*)pk;
+{% endif %}
+
+{% if m == 'post' %}
+- (void)create{{ model_name }}:({{ model_name }}*)a{{ model_name }};
+{% endif %}
+
+{% if m == 'put' %}
+- (void)update{{ model_name }}:({{ model_name }}*)a{{ model_name }} withId:(NSString*)pk;
+{% endif %}
+
+{% if m == 'delete' %}
+- (void)delete{{ model_name }}:(NSString*)pk;
+{% endif %}
+{% endfor %}
+
+
+@end
+
+{% endformat_code %}

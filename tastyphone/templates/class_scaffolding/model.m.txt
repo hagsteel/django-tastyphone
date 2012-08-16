@@ -1,0 +1,24 @@
+{% include "class_heading.txt" %}
+
+#import "{{model_name}}.h"
+
+@implementation {{model_name}}
+{% for f in objects %}
+@synthesize {{f.field_name}};{% endfor %}{% for f in primitives %}
+@synthesize {{f.field_name}};{% endfor %}
+
+
+- (id)init {
+    if ((self = [super init])) {{% for f in objects %}
+        {{f.field_name}} = [{{f.type}} new];{% endfor %}
+    }
+    return self;
+}
+
+- (void)dealloc {{% for f in objects %}
+    [{{f.field_name}} release];{% endfor %}
+    [super dealloc];
+}
+
+@end
+

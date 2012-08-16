@@ -1,0 +1,1 @@
+from tastyphone.tests.CreateModelTest import CreateModelTest

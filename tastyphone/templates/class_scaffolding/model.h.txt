@@ -1,0 +1,14 @@
+{% include "class_heading.txt" %}
+
+
+#import <Foundation/Foundation.h>
+
+@interface {{model_name}} : NSObject
+
+{% for f in objects %}@property (nonatomic, retain) {{f.type}} *{{f.field_name}};
+{% endfor %}{% for f in primitives %}@property (nonatomic, assign) {{f.type}} {{f.field_name}};
+{% endfor %}
+
+@end
+
+

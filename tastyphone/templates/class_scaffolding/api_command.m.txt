@@ -1,0 +1,76 @@
+{% include "class_heading.txt" %}
+{% load data_binding %}
+
+
+#import "NSString+DateToString.h"
+#import "{{ model_name }}Command.h"
+
+@interface {{ model_name }}Command (Private)
+- (NSDictionary*)dictionaryFromModel:({{ model_name }}*){{ instance_name }};
+@end
+
+@implementation {{ model_name }}Command
+
+@synthesize delegate;
+
+{% format_code %}
+- (id)init {
+    if ((self = [super initWithTargetClass:[{{ model_name }} class]])) {
+    }
+    return self;
+}
+
+- (NSDictionary*)dictionaryFromModel:({{ model_name }}*){{ instance_name }} {
+        NSArray *keys = [NSArray arrayWithObjects:{% for o in objects|writable_fields%}@"{{ o.original_name }}", {% endfor %}{% for p in primitives|writable_fields%}@"{{ p.original_name }}", {% endfor %}nil];
+
+        NSArray *values = [NSArray arrayWithObjects:
+        {% for o in objects %}{{ o|to_nsstring:instance_name }},
+        {% endfor %}{% for p in primitives %}{{ p|to_nsstring:instance_name }},
+            {% endfor %}nil];
+
+        NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+        return dict;
+}
+
+{% for m in allowed_list_methods %}
+{% if m == 'get' %}
+- (void)get{{ model_name }}List {
+    [self.connection makeGetRequest:@"{{endpoint}}"];
+}
+{% endif %}
+{% endfor %}
+
+{% for m in allowed_detailed_methods %}
+{% if m == 'get' %}
+- (void)get{{ model_name }}:(NSString*)pk {
+    NSString *uri = [NSString stringWithFormat:@"%@%@/", @"{{endpoint}}", pk];
+    [self.connection makeGetRequest:uri];
+}
+{% endif %}
+
+{% if m == 'post' %}
+- (void)create{{ model_name }}:({{ model_name }}*){{ instance_name }} {
+    [self.connection makePostRequest:[self dictionaryFromModel:{{ instance_name }}] withDestination:@"{{endpoint}}"];
+}
+{% endif %}
+
+{% if m == 'put' %}
+- (void)update{{ model_name }}:({{ model_name }}*)a{{ model_name }} withId:(NSString*)pk {
+    NSString *uri = [NSString stringWithFormat:@"%@%@/", @"{{endpoint}}", pk];
+    [self.connection makePutRequest:[self dictionaryFromModel:{{ instance_name }}] withDestination:uri];
+}
+{% endif %}
+
+{% if m == 'delete' %}
+- (void)delete{{ model_name }}:(NSString*)pk {
+    NSString *uri = [NSString stringWithFormat:@"%@%@/", @"{{endpoint}}", pk];
+    [self.connection makeDeleteRequest:uri];
+}
+{% endif %}
+{% endfor %}
+{% endformat_code %}
+
+@end
+
+
+

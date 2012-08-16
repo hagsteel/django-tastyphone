@@ -1,0 +1,7 @@
+{% include "class_heading.txt" %}
+
+#import <Foundation/Foundation.h>
+
+@protocol ObjectMapProtocol <NSObject>
+- (id)mapObject:(id)data;
+@end

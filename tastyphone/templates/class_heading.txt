@@ -1,0 +1,6 @@
+//
+//  {{file_name}}
+//
+//  Created by tastyphone on {{date_day}}/{{date_month}}/{{date_year}}.{% if company_name %}
+//  Copyright (c) 2012 {{company_name}}. All rights reserved.{% endif %}
+//

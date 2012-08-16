@@ -1,0 +1,14 @@
+{% include "class_heading.txt" %}
+
+#import "ApiError.h"
+
+@implementation ApiError
+
+@synthesize message;
+
+- (void)dealloc {
+	[message release];
+	[super dealloc];
+}
+
+@end

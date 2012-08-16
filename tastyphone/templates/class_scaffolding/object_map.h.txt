@@ -1,0 +1,9 @@
+{% include "class_heading.txt" %}
+
+#import <Foundation/Foundation.h>
+#import "{{ model_name }}.h"
+#import "ObjectMapProtocol.h"
+
+@interface {{ map_name }} : NSObject <ObjectMapProtocol>
+
+@end
