@@ -7,7 +7,7 @@
 //
 
 #import "PollViewController.h"
-#import "QuestionViewController.m"
+#import "QuestionViewController.h"
 
 @interface PollViewController ()
 @property (nonatomic, retain) PollCommand* pollCommand;
