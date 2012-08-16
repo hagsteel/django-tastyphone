@@ -2,8 +2,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ObjectMapProtocol.h"
-{% for h in model_headers %}
-#import "{{h}}"{% endfor %}
+{% for h in model_maps %}
+#import "{{h}}.h"{% endfor %}
 
 @interface ObjectMapperFactory : NSObject {
 	NSDictionary *_objectMaps;

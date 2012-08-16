@@ -38,7 +38,7 @@ class ClassRenderer(object):
         self.file_manager.write_file_to_disk(self.file_manager.get_models_dir(), model.get_header_name(), class_header_data)
 
     def render_object_map_factory(self, models):
-        context = Context({'model_headers': [m.get_header_name() for m in models], 'models': [m.name for m in models]})
+        context = Context({'model_maps': ['%sMap' % m.name for m in models], 'models': [m.name for m in models]})
         context = self.add_default_context(context)
 
         class_template = get_template('class_scaffolding/object_mapper_factory.m.txt')

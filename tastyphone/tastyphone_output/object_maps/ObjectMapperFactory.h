@@ -7,9 +7,9 @@
 #import <Foundation/Foundation.h>
 #import "ObjectMapProtocol.h"
 
-#import "Poll.h"
-#import "Question.h"
-#import "Choice.h"
+#import "PollMap.h"
+#import "QuestionMap.h"
+#import "ChoiceMap.h"
 
 @interface ObjectMapperFactory : NSObject {
 	NSDictionary *_objectMaps;

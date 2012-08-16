@@ -5,8 +5,26 @@
 #import "NSDate+DateFromString.h"
 
 {% format_code %}
+
+@interface {{ map_name }} (Private)
+- (id)mapInstance:(id)data;
+@end
+
 @implementation {{ map_name }}
+
 - (id)mapObject:(id)data {
+	if ([data objectForKey:@"objects"] != nil) {
+		NSMutableArray *items = [NSMutableArray new];
+		for (NSDictionary *a in [data objectForKey:@"objects"]){
+			[items addObject:[self mapInstance:a]];
+		}
+		return items;
+	} else {
+		return [self mapInstance:data];
+	}
+}
+
+- (id)mapInstance:(id)data {
 	{{model_name}} *instance = [[{{model_name}} alloc] init];
 	{% for o in objects %}
 	instance.{{o.field_name}} = {{o|data_binding}};

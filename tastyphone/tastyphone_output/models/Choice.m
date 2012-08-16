@@ -10,13 +10,16 @@
 
 @synthesize dateCreated;
 @synthesize ChoiceId;
+@synthesize description;
 @synthesize resourceUri;
+@synthesize count;
 
 
 - (id)init {
     if ((self = [super init])) {
         dateCreated = [NSDate new];
         ChoiceId = [NSString new];
+        description = [NSString new];
         resourceUri = [NSString new];
     }
     return self;
@@ -25,6 +28,7 @@
 - (void)dealloc {
     [dateCreated release];
     [ChoiceId release];
+    [description release];
     [resourceUri release];
     [super dealloc];
 }

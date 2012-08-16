@@ -25,12 +25,14 @@
 }
 
 - (NSDictionary*)dictionaryFromModel:(Choice*)aChoice {
-        NSArray *keys = [NSArray arrayWithObjects:@"date_created", @"id", nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"date_created", @"id", @"description", @"count", nil];
         NSArray *values = [NSArray arrayWithObjects:
         [NSString stringWithFormat:@"%@", [NSDate stringFromDate:aChoice.dateCreated]],
         aChoice.ChoiceId,
+        aChoice.description,
         aChoice.resourceUri,
-        nil];
+        [NSString stringWithFormat:@"%d", aChoice.count],
+            nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;
 }

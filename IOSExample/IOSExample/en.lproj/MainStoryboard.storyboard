@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="lKg-DG-OqN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="OB0-In-cVC">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -11,38 +11,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRd-Dj-VE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="lKg-DG-OqN" customClass="QuestionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cta-cV-DOF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fds-qk-FvP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="questionCell" id="Fds-qk-FvP">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="lKg-DG-OqN" id="c4E-Xv-P09"/>
-                            <outlet property="delegate" destination="lKg-DG-OqN" id="OaR-Nm-Z5v"/>
+                            <outlet property="dataSource" destination="lKg-DG-OqN" id="bce-4O-kzU"/>
+                            <outlet property="delegate" destination="lKg-DG-OqN" id="wUf-zK-ybc"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="wdS-uj-ZwN"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="312" y="155"/>
+            <point key="canvasLocation" x="2" y="122"/>
+        </scene>
+        <!--Poll View Controller - Root View Controller-->
+        <scene sceneID="Tqf-2S-8ii">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lrt-3c-Wds" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="cBy-4H-QeE" customClass="PollViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Icx-Rb-QNs">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pollCell" id="tHU-Fx-hqG">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="lKg-DG-OqN" kind="push" id="qEC-QI-Oni"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="EYe-br-8CX"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-506" y="122"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PWv-WF-4hO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TeR-Ig-RSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="OB0-In-cVC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2OF-xh-bt8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cBy-4H-QeE" kind="relationship" relationship="rootViewController" id="gwM-gm-RFD"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1147" y="48"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="QuestionViewController" superclassName="TableViewControllerWithLoader">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionViewController.h"/>
-        </class>
-        <class className="TableViewControllerWithLoader" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewControllerWithLoader.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

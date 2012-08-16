@@ -1,0 +1,65 @@
+[
+  {
+    "pk": 1, 
+    "model": "django_example.poll", 
+    "fields": {
+      "title": "A fancy poll"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "django_example.question", 
+    "fields": {
+      "poll": 1, 
+      "question": "Do you like kittens"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "django_example.question", 
+    "fields": {
+      "poll": 1, 
+      "question": "Do you like puppies"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "django_example.choice", 
+    "fields": {
+      "count": 0, 
+      "date_created": "2012-08-16T16:20:52.619Z", 
+      "question": 1, 
+      "description": "Yes"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "django_example.choice", 
+    "fields": {
+      "count": 0, 
+      "date_created": "2012-08-16T16:21:26.956Z", 
+      "question": 1, 
+      "description": "No"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "django_example.choice", 
+    "fields": {
+      "count": 0, 
+      "date_created": "2012-08-16T16:21:40.900Z", 
+      "question": 2, 
+      "description": "Yes"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "django_example.choice", 
+    "fields": {
+      "count": 0, 
+      "date_created": "2012-08-16T16:21:46.395Z", 
+      "question": 2, 
+      "description": "No"
+    }
+  }
+]

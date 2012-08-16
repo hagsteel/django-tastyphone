@@ -8,11 +8,8 @@
 #import "ApiError.h"
 #import "ObjectMapperFactory.h"
 
-// DEV
-#define kHostname @"192.168.1.81"
-#define kRootUrl @"http://192.168.1.81:8000/api/v1"
-#define kVersion @"dev 0.0.1"
-//#define kIsDevVersion
+#define kHostname @"127.0.0.1"
+#define kApiRootUrl @"http://127.0.0.1:8000"
 
 @protocol RESTConnectionDelegate <NSObject>
 - (void)dataReceived:(id)object;
