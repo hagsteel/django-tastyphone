@@ -1,6 +1,6 @@
 from tastypie.authorization import Authorization
 from tastypie.resources import ModelResource
-from django_example.models import Poll, Question, Vote
+from django_example.models import Poll, Question, Choice
 
 
 class PollResource(ModelResource):
@@ -19,9 +19,9 @@ class QuestionResource(ModelResource):
         authorization = Authorization()
 
 
-class VoteResource(ModelResource):
+class ChoiceResource(ModelResource):
     class Meta:
-        resource_name = 'vote'
-        queryset = Vote.objects.all()
+        resource_name = 'choice'
+        queryset = Choice.objects.all()
         allowed_methods = ['get', 'post', 'put', 'delete']
         authorization = Authorization()

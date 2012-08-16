@@ -2,7 +2,6 @@ from django import template
 from django.utils.encoding import force_unicode
 from django.utils.safestring import mark_safe
 from django.template.base import Node
-import re
 
 register = template.Library()
 
@@ -37,8 +36,6 @@ def data_binding(field):
 
     if field['type'] == 'NSDate':
         return mark_safe('[NSDate dateFromString:[data objectForKey:@"%s"]]' % field['original_name'])
-
-        return mark_safe('[data objectForKey:@"%s"] // this might need attention' % field['original_name'])
 
 
 @register.filter(name='writable_fields', needs_autoescape=False, is_safe=False)

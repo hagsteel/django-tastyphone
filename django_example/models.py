@@ -10,6 +10,6 @@ class Question(models.Model):
     poll = models.ForeignKey(Poll, related_name='polls')
 
 
-class Vote(models.Model):
+class Choice(models.Model):
     date_created = models.DateTimeField(auto_now=True)
-    question = models.ForeignKey(Question, related_name='questions')
+    question = models.ForeignKey(Question, related_name='choices')
