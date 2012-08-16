@@ -158,7 +158,7 @@
 
 - (NSURL *)getUrl:(NSString *)actionUrl
 {
-	NSString *rawUri = [[NSString alloc]initWithFormat:@"%@%@", kRootUrl, actionUrl];
+	NSString *rawUri = [[NSString alloc]initWithFormat:@"%@%@", kApiRootUrl, actionUrl];
 	NSURL *url = [[NSURL alloc] initWithString:rawUri];
 	[rawUri release];
 	return url;

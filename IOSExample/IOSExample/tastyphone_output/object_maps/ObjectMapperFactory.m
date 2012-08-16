@@ -19,9 +19,9 @@ static ObjectMapperFactory* sharedObjectMapper = nil;
 - (id)init {
 	if ((self = [super init])) {
 		NSArray *values = [NSArray arrayWithObjects:
-                           [Poll new],
-                           [Question new],
-                           [Choice new], nil];
+                           [PollMap new],
+                           [QuestionMap new],
+                           [ChoiceMap new], nil];
 
 		NSArray *keys = [NSArray arrayWithObjects:
                          [Poll class],
