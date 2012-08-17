@@ -54,7 +54,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="lKg-DG-OqN" kind="push" id="qEC-QI-Oni"/>
+                                    <segue destination="lKg-DG-OqN" kind="push" identifier="view qestions" id="qEC-QI-Oni"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -80,6 +80,17 @@
             <point key="canvasLocation" x="-1147" y="48"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="PollViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PollViewController.h"/>
+        </class>
+        <class className="QuestionViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionViewController.h"/>
+        </class>
+        <class className="TableViewControllerWithLoader" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewControllerWithLoader.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

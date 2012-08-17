@@ -46,6 +46,17 @@
     NSString *uri = [NSString stringWithFormat:@"%@%@/", @"{{endpoint}}", pk];
     [self.connection makeGetRequest:uri];
 }
+
+{% if filters %}
+{% for f in filters %}
+- (void)get{{ model_name }}By{{f|title}}:(NSString*){{f}} {
+    NSString *uri = [NSString stringWithFormat:@"%@?{{f}}=%@", @"{{endpoint}}", {{f}}];
+    [self.connection makeGetRequest:uri];
+}
+{% endfor %}
+{% endif %}
+
+
 {% endif %}
 
 {% if m == 'post' %}

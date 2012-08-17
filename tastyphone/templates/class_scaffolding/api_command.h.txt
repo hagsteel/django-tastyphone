@@ -16,6 +16,11 @@
 {% for m in allowed_detailed_methods %}
 {% if m == 'get' %}
 - (void)get{{ model_name }}:(NSString*)pk;
+{% if filters %}
+{% for f in filters %}
+- (void)get{{ model_name }}By{{f|title}}:(NSString*){{f}};
+{% endfor %}
+{% endif %}
 {% endif %}
 
 {% if m == 'post' %}

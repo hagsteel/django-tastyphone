@@ -16,6 +16,8 @@ static ObjectMapperFactory* sharedObjectMapper = nil;
 
 @implementation ObjectMapperFactory
 
+@synthesize objectMaps;
+
 - (id)init {
 	if ((self = [super init])) {
 		NSArray *values = [NSArray arrayWithObjects:
@@ -28,7 +30,7 @@ static ObjectMapperFactory* sharedObjectMapper = nil;
                          [Question class],
                          [Choice class], nil];
 
-		_objectMaps = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+		self.objectMaps = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	}
 	return self;
 }
@@ -41,9 +43,9 @@ static ObjectMapperFactory* sharedObjectMapper = nil;
 }
 
 - (id<ObjectMapProtocol>)getMapperForClass:(Class)theClass {
-	for (Class c in [_objectMaps allKeys]) {
+	for (Class c in [self.objectMaps allKeys]) {
 		if (c == theClass)
-			return (id<ObjectMapProtocol>)[_objectMaps objectForKey:c];
+			return (id<ObjectMapProtocol>)[self.objectMaps objectForKey:c];
 	}
 
 	return nil;

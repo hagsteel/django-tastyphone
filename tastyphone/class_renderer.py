@@ -79,6 +79,7 @@ class ClassRenderer(object):
                            'objects': model.objects,
                            'allowed_list_methods': model.allowed_list_http_methods,
                            'allowed_detailed_methods': model.allowed_detailed_http_methods,
+                           'filters': model.filters,
                            'endpoint': model.endpoint,
                            'primitives': model.primitives})
         context = self.add_default_context(context)

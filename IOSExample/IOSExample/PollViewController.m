@@ -54,9 +54,10 @@
 {
 	if ([segue.identifier isEqualToString:@"view qestions"])
 	{
-		
-		//		SettingsViewController *playerDetailsViewController = segue.destinationViewController;
-		//		playerDetailsViewController.delegate = self;
+		QuestionViewController *questionViewController = segue.destinationViewController;
+		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+		Poll* p = [self.polls objectAtIndex:selectedIndexPath.row];
+		questionViewController.pollId = p.PollId;
 	}
 }
 

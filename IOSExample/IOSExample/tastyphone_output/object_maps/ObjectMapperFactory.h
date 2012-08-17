@@ -11,10 +11,9 @@
 #import "QuestionMap.h"
 #import "ChoiceMap.h"
 
-@interface ObjectMapperFactory : NSObject {
-	NSDictionary *_objectMaps;
-}
+@interface ObjectMapperFactory : NSObject
 
+@property (nonatomic, retain) NSDictionary *objectMaps;
 + (ObjectMapperFactory*)sharedInstance;
 
 - (id<ObjectMapProtocol>)getMapperForClass:(Class)theClass;

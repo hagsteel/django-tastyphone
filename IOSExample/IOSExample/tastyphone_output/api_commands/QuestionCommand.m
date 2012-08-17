@@ -44,6 +44,11 @@
     [self.connection makeGetRequest:uri];
 }
 
+- (void)getQuestionByPoll:(NSString*)poll {
+    NSString *uri = [NSString stringWithFormat:@"%@?poll=%@", @"/api/v1/question/", poll];
+    [self.connection makeGetRequest:uri];
+}
+
 - (void)createQuestion:(Question*)aQuestion {
     [self.connection makePostRequest:[self dictionaryFromModel:aQuestion] withDestination:@"/api/v1/question/"];
 }

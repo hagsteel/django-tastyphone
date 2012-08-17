@@ -10,7 +10,7 @@ class Poll(models.Model):
 
 class Question(models.Model):
     question = models.CharField(max_length=254, null=False)
-    poll = models.ForeignKey(Poll, related_name='polls')
+    poll = models.ForeignKey(Poll, related_name='questions')
 
     def __unicode__(self):
         return self.question

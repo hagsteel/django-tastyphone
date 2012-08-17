@@ -32,13 +32,15 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[self showLoader];
-	
+	[self.questionCommand getQuestionByPoll:self.pollId];
 }
 
 #pragma mark - Api command delegate
 
 - (void)dataReceived:(id)object {
 	[self hideLoader];
+	self.questions = object;
+	[self.tableView reloadData];
 }
 
 - (void)apiErrorReceived:(ApiError *)error {
@@ -79,7 +81,7 @@
 		cell = [[UITableViewCell alloc] init];
 	
 	Question *question = [self.questions objectAtIndex:indexPath.row];
-	cell.textLabel.text = question.description;    
+	cell.textLabel.text = question.question;
     return cell;
 }
 

@@ -1,4 +1,5 @@
 import itertools
+from django.utils import simplejson
 from tastyphone.formatters import Formatters
 from tastyphone.type_handling.types import DataTypes
 
@@ -20,6 +21,11 @@ class Model(object):
 
         self.allowed_detailed_http_methods = schema['allowed_detail_http_methods']
         self.allowed_list_http_methods = schema['allowed_list_http_methods']
+
+        if 'filtering' in schema:
+            self.filters = [f for f in schema['filtering']]
+        else:
+            self.filters = None
 
     def __unicode__(self):
         return self.name
