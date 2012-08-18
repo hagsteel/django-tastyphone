@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 
@@ -30,8 +30,8 @@
 - (id)mapInstance:(id)data {
 	Poll *instance = [[Poll alloc] init];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
-	instance.PollId = [data objectForKey:@"id"];
 	instance.title = [data objectForKey:@"title"];
+	instance.PollId = [[data objectForKey:@"id"] intValue];
 	return instance;
 }
 

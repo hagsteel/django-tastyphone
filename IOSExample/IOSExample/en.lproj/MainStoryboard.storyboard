@@ -23,6 +23,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="vdr-2B-lu9" kind="push" identifier="view choices" id="8SK-la-1rh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,6 +37,36 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2" y="122"/>
+        </scene>
+        <!--Choices View Controller-->
+        <scene sceneID="eaR-uW-trv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9g-WW-fea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="vdr-2B-lu9" customClass="ChoicesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AHZ-c2-tvv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="choiceCell" id="HaU-jI-RME">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vdr-2B-lu9" id="Xis-Sd-Vqx"/>
+                            <outlet property="delegate" destination="vdr-2B-lu9" id="KpD-YT-kBQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="9mc-6R-uXF"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="513" y="130"/>
         </scene>
         <!--Poll View Controller - Root View Controller-->
         <scene sceneID="Tqf-2S-8ii">
@@ -81,6 +114,12 @@
         </scene>
     </scenes>
     <classes>
+        <class className="ChoicesViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChoicesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="voteClick:"/>
+            </relationships>
+        </class>
         <class className="PollViewController" superclassName="TableViewControllerWithLoader">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PollViewController.h"/>
         </class>

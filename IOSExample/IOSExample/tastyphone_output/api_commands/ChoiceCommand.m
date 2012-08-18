@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 
@@ -25,13 +25,11 @@
 }
 
 - (NSDictionary*)dictionaryFromModel:(Choice*)aChoice {
-        NSArray *keys = [NSArray arrayWithObjects:@"date_created", @"id", @"description", @"count", nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"description", @"count", @"id", nil];
         NSArray *values = [NSArray arrayWithObjects:
-        [NSString stringWithFormat:@"%@", [NSDate stringFromDate:aChoice.dateCreated]],
-        aChoice.ChoiceId,
         aChoice.description,
-        aChoice.resourceUri,
         [NSString stringWithFormat:@"%d", aChoice.count],
+            [NSString stringWithFormat:@"%d", aChoice.ChoiceId],
             nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;
@@ -43,6 +41,11 @@
 
 - (void)getChoice:(NSString*)pk {
     NSString *uri = [NSString stringWithFormat:@"%@%@/", @"/api/v1/choice/", pk];
+    [self.connection makeGetRequest:uri];
+}
+
+- (void)getChoiceByQuestion:(NSString*)question {
+    NSString *uri = [NSString stringWithFormat:@"%@?question=%@", @"/api/v1/choice/", question];
     [self.connection makeGetRequest:uri];
 }
 

@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 
@@ -30,8 +30,8 @@
 - (id)mapInstance:(id)data {
 	Question *instance = [[Question alloc] init];
 	instance.question = [data objectForKey:@"question"];
-	instance.QuestionId = [data objectForKey:@"id"];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
+	instance.QuestionId = [[data objectForKey:@"id"] intValue];
 	return instance;
 }
 

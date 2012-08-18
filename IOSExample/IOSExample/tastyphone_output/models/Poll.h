@@ -1,7 +1,7 @@
 //
 //  Poll.h
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 
@@ -10,8 +10,8 @@
 @interface Poll : NSObject
 
 @property (nonatomic, retain) NSString *resourceUri;
-@property (nonatomic, retain) NSString *PollId;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, assign) NSInteger PollId;
 
 
 @end

@@ -57,7 +57,7 @@
 		QuestionViewController *questionViewController = segue.destinationViewController;
 		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
 		Poll* p = [self.polls objectAtIndex:selectedIndexPath.row];
-		questionViewController.pollId = p.PollId;
+		questionViewController.poll = p;
 	}
 }
 

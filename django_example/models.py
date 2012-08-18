@@ -9,7 +9,7 @@ class Poll(models.Model):
 
 
 class Question(models.Model):
-    question = models.CharField(max_length=254, null=False)
+    question = models.CharField(max_length=254)
     poll = models.ForeignKey(Poll, related_name='questions')
 
     def __unicode__(self):
@@ -19,7 +19,7 @@ class Question(models.Model):
 class Choice(models.Model):
     date_created = models.DateTimeField(auto_now=True)
     question = models.ForeignKey(Question, related_name='choices')
-    description = models.CharField(max_length=30)
+    description = models.CharField(max_length=30, help_text="go eat ham")
     count = models.IntegerField(default=0)
 
     def __unicode__(self):

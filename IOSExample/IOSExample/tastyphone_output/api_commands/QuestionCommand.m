@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 
@@ -28,9 +28,8 @@
         NSArray *keys = [NSArray arrayWithObjects:@"question", @"id", nil];
         NSArray *values = [NSArray arrayWithObjects:
         aQuestion.question,
-        aQuestion.QuestionId,
-        aQuestion.resourceUri,
-        nil];
+        [NSString stringWithFormat:@"%d", aQuestion.QuestionId],
+            nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;
 }

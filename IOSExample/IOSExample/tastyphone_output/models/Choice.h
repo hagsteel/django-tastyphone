@@ -1,7 +1,7 @@
 //
 //  Choice.h
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 
@@ -10,10 +10,10 @@
 @interface Choice : NSObject
 
 @property (nonatomic, retain) NSDate *dateCreated;
-@property (nonatomic, retain) NSString *ChoiceId;
-@property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSString *resourceUri;
+@property (nonatomic, retain) NSString *description;
 @property (nonatomic, assign) NSInteger count;
+@property (nonatomic, assign) NSInteger ChoiceId;
 
 
 @end

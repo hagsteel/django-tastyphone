@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 #import "RESTConnection.h"
@@ -43,7 +43,7 @@
 	NSLog(@"Url [POST]: %@", url);
 	NSMutableURLRequest *request = [self createRequest:url];
 	[request setHTTPMethod:@"POST"];
-	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type:"];
+	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 
 
 	NSMutableData *requestData = [[NSMutableData alloc] init];
@@ -70,6 +70,32 @@
 
 	NSMutableURLRequest *request = [self createRequest:url];
 	[request setHTTPMethod:@"PUT"];
+	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+	
+	
+	NSMutableData *requestData = [[NSMutableData alloc] init];
+	if (formData != nil) {
+		for (id key in [formData allKeys]) {
+			NSString *value = [formData objectForKey:key];
+			NSString *urlEncodedValue = [value stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+			NSString *v = [NSString stringWithFormat:@"&%@=%@", key, urlEncodedValue];
+			[requestData appendData:[v dataUsingEncoding:NSUTF8StringEncoding]];
+		}
+	}
+	
+	NSError *error;
+	NSData *putData = [NSJSONSerialization dataWithJSONObject:formData options:kNilOptions error:&error];
+	[request setHTTPBody:putData];
+//	[request setHTTPBody:requestData];
+	
+	
+	[requestData release];
+	
+	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+	
+	/*
+	NSMutableURLRequest *request = [self createRequest:url];
+	[request setHTTPMethod:@"PUT"];
 	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type:"];
 
 	NSMutableData *requestData = [[NSMutableData alloc] init];
@@ -83,6 +109,7 @@
 	[requestData release];
 
 	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+	 */
 }
 
 #pragma mark - DELETE

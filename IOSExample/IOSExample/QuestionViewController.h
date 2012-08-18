@@ -8,11 +8,11 @@
 
 #import "TableViewControllerWithLoader.h"
 #import "QuestionCommand.h"
-#import "PollCommand.h"
+#import "Poll.h"
 
 @interface QuestionViewController : TableViewControllerWithLoader <ApiCommandDelegate>
 
-@property (nonatomic, retain) NSString *pollId;
+@property (nonatomic, retain) Poll *poll;
 @property (nonatomic, retain) NSArray *questions;
 @property (nonatomic, retain) QuestionCommand *questionCommand;
 @end

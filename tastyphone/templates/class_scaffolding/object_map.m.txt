@@ -29,6 +29,9 @@
 	{% for o in objects %}
 	instance.{{o.field_name}} = {{o|data_binding}};
 	{% endfor %}
+	{% for p in primitives %}
+	instance.{{p.field_name}} = {{p|data_binding}};
+	{% endfor %}
 
 	return instance;
 }

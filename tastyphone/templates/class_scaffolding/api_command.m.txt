@@ -24,8 +24,8 @@
         NSArray *keys = [NSArray arrayWithObjects:{% for o in objects|writable_fields%}@"{{ o.original_name }}", {% endfor %}{% for p in primitives|writable_fields%}@"{{ p.original_name }}", {% endfor %}nil];
 
         NSArray *values = [NSArray arrayWithObjects:
-        {% for o in objects %}{{ o|to_nsstring:instance_name }},
-        {% endfor %}{% for p in primitives %}{{ p|to_nsstring:instance_name }},
+        {% for o in objects|writable_fields %}{{ o|to_nsstring:instance_name }},
+        {% endfor %}{% for p in primitives|writable_fields %}{{ p|to_nsstring:instance_name }},
             {% endfor %}nil];
 
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];

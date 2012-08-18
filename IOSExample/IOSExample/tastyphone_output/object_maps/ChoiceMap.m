@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 
@@ -30,9 +30,10 @@
 - (id)mapInstance:(id)data {
 	Choice *instance = [[Choice alloc] init];
 	instance.dateCreated = [NSDate dateFromString:[data objectForKey:@"date_created"]];
-	instance.ChoiceId = [data objectForKey:@"id"];
-	instance.description = [data objectForKey:@"description"];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
+	instance.description = [data objectForKey:@"description"];
+	instance.count = [[data objectForKey:@"count"] intValue];
+	instance.ChoiceId = [[data objectForKey:@"id"] intValue];
 	return instance;
 }
 

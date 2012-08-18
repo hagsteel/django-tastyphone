@@ -7,6 +7,7 @@
 //
 
 #import "QuestionViewController.h"
+#import "ChoicesViewController.h"
 
 @interface QuestionViewController ()
 
@@ -14,7 +15,7 @@
 
 @implementation QuestionViewController
 
-@synthesize pollId;
+@synthesize poll;
 @synthesize questionCommand;
 @synthesize questions;
 
@@ -32,7 +33,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[self showLoader];
-	[self.questionCommand getQuestionByPoll:self.pollId];
+	[self.questionCommand getQuestionByPoll:[NSString stringWithFormat:@"%d", self.poll.PollId]];
 }
 
 #pragma mark - Api command delegate
@@ -53,10 +54,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	if ([segue.identifier isEqualToString:@"view qestions"])
+	if ([segue.identifier isEqualToString:@"view choices"])
 	{
-//		SettingsViewController *playerDetailsViewController = segue.destinationViewController;
-//		playerDetailsViewController.delegate = self;
+		ChoicesViewController *choicesViewController = segue.destinationViewController;
+		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+		Question* q = [self.questions objectAtIndex:selectedIndexPath.row];
+		choicesViewController.question = q;
 	}
 }
 
@@ -75,7 +78,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"questionIdentifier";
+    static NSString *cellIdentifier = @"questionCell";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (cell == nil)
 		cell = [[UITableViewCell alloc] init];
@@ -87,7 +90,7 @@
 
 
 - (void)dealloc {
-	[self.pollId release];
+	[self.poll release];
 	[self.questionCommand release];
 	[self.questions release];
 	[super dealloc];

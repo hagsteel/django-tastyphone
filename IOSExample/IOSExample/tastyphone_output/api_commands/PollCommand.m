@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 16/8/2012.
+//  Created by tastyphone on 18/8/2012.
 //
 
 
@@ -25,12 +25,11 @@
 }
 
 - (NSDictionary*)dictionaryFromModel:(Poll*)aPoll {
-        NSArray *keys = [NSArray arrayWithObjects:@"id", @"title", nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"title", @"id", nil];
         NSArray *values = [NSArray arrayWithObjects:
-        aPoll.resourceUri,
-        aPoll.PollId,
         aPoll.title,
-        nil];
+        [NSString stringWithFormat:@"%d", aPoll.PollId],
+            nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;
 }
