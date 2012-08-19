@@ -19,21 +19,21 @@
 		DDC1F7D815DD508E0029079D /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC1F7D715DD508E0029079D /* QuestionViewController.m */; };
 		DDC1F7D915DD509E0029079D /* TableViewControllerWithLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC1F7D315DD4F840029079D /* TableViewControllerWithLoader.m */; };
 		DDC1F84E15DD7CD40029079D /* PollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC1F84D15DD7CD40029079D /* PollViewController.m */; };
-		DDEEE3E615DFB01C00DFA037 /* ChoiceCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3C415DFB01C00DFA037 /* ChoiceCommand.m */; };
-		DDEEE3E715DFB01C00DFA037 /* PollCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3C615DFB01C00DFA037 /* PollCommand.m */; };
-		DDEEE3E815DFB01C00DFA037 /* QuestionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3C815DFB01C00DFA037 /* QuestionCommand.m */; };
-		DDEEE3E915DFB01C00DFA037 /* ApiBaseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3CB15DFB01C00DFA037 /* ApiBaseCommand.m */; };
-		DDEEE3EA15DFB01C00DFA037 /* ApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3CD15DFB01C00DFA037 /* ApiError.m */; };
-		DDEEE3EB15DFB01C00DFA037 /* RestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3CF15DFB01C00DFA037 /* RestConnection.m */; };
-		DDEEE3EC15DFB01C00DFA037 /* NSDate+DateFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3D215DFB01C00DFA037 /* NSDate+DateFromString.m */; };
-		DDEEE3ED15DFB01C00DFA037 /* NSString+DateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3D415DFB01C00DFA037 /* NSString+DateToString.m */; };
-		DDEEE3EE15DFB01C00DFA037 /* Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3D715DFB01C00DFA037 /* Choice.m */; };
-		DDEEE3EF15DFB01C00DFA037 /* Poll.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3D915DFB01C00DFA037 /* Poll.m */; };
-		DDEEE3F015DFB01C00DFA037 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3DB15DFB01C00DFA037 /* Question.m */; };
-		DDEEE3F115DFB01C00DFA037 /* ChoiceMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3DE15DFB01C00DFA037 /* ChoiceMap.m */; };
-		DDEEE3F215DFB01C00DFA037 /* ObjectMapperFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3E015DFB01C00DFA037 /* ObjectMapperFactory.m */; };
-		DDEEE3F315DFB01C00DFA037 /* PollMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3E315DFB01C00DFA037 /* PollMap.m */; };
-		DDEEE3F415DFB01C00DFA037 /* QuestionMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3E515DFB01C00DFA037 /* QuestionMap.m */; };
+		DDEEE41A15E1308200DFA037 /* ChoiceCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3F815E1308200DFA037 /* ChoiceCommand.m */; };
+		DDEEE41B15E1308200DFA037 /* PollCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3FA15E1308200DFA037 /* PollCommand.m */; };
+		DDEEE41C15E1308200DFA037 /* QuestionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3FC15E1308200DFA037 /* QuestionCommand.m */; };
+		DDEEE41D15E1308200DFA037 /* ApiBaseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE3FF15E1308200DFA037 /* ApiBaseCommand.m */; };
+		DDEEE41E15E1308200DFA037 /* ApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE40115E1308200DFA037 /* ApiError.m */; };
+		DDEEE41F15E1308200DFA037 /* RestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE40315E1308200DFA037 /* RestConnection.m */; };
+		DDEEE42015E1308200DFA037 /* NSDate+DateFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE40615E1308200DFA037 /* NSDate+DateFromString.m */; };
+		DDEEE42115E1308200DFA037 /* NSString+DateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE40815E1308200DFA037 /* NSString+DateToString.m */; };
+		DDEEE42215E1308200DFA037 /* Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE40B15E1308200DFA037 /* Choice.m */; };
+		DDEEE42315E1308200DFA037 /* Poll.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE40D15E1308200DFA037 /* Poll.m */; };
+		DDEEE42415E1308200DFA037 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE40F15E1308200DFA037 /* Question.m */; };
+		DDEEE42515E1308200DFA037 /* ChoiceMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE41215E1308200DFA037 /* ChoiceMap.m */; };
+		DDEEE42615E1308200DFA037 /* ObjectMapperFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE41415E1308200DFA037 /* ObjectMapperFactory.m */; };
+		DDEEE42715E1308200DFA037 /* PollMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE41715E1308200DFA037 /* PollMap.m */; };
+		DDEEE42815E1308200DFA037 /* QuestionMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE41915E1308200DFA037 /* QuestionMap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,37 +57,37 @@
 		DDC1F7D715DD508E0029079D /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		DDC1F84C15DD7CD40029079D /* PollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollViewController.h; sourceTree = "<group>"; };
 		DDC1F84D15DD7CD40029079D /* PollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollViewController.m; sourceTree = "<group>"; };
-		DDEEE3C315DFB01C00DFA037 /* ChoiceCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceCommand.h; sourceTree = "<group>"; };
-		DDEEE3C415DFB01C00DFA037 /* ChoiceCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceCommand.m; sourceTree = "<group>"; };
-		DDEEE3C515DFB01C00DFA037 /* PollCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollCommand.h; sourceTree = "<group>"; };
-		DDEEE3C615DFB01C00DFA037 /* PollCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollCommand.m; sourceTree = "<group>"; };
-		DDEEE3C715DFB01C00DFA037 /* QuestionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCommand.h; sourceTree = "<group>"; };
-		DDEEE3C815DFB01C00DFA037 /* QuestionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCommand.m; sourceTree = "<group>"; };
-		DDEEE3CA15DFB01C00DFA037 /* ApiBaseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiBaseCommand.h; sourceTree = "<group>"; };
-		DDEEE3CB15DFB01C00DFA037 /* ApiBaseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiBaseCommand.m; sourceTree = "<group>"; };
-		DDEEE3CC15DFB01C00DFA037 /* ApiError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiError.h; sourceTree = "<group>"; };
-		DDEEE3CD15DFB01C00DFA037 /* ApiError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiError.m; sourceTree = "<group>"; };
-		DDEEE3CE15DFB01C00DFA037 /* RestConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestConnection.h; sourceTree = "<group>"; };
-		DDEEE3CF15DFB01C00DFA037 /* RestConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestConnection.m; sourceTree = "<group>"; };
-		DDEEE3D115DFB01C00DFA037 /* NSDate+DateFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFromString.h"; sourceTree = "<group>"; };
-		DDEEE3D215DFB01C00DFA037 /* NSDate+DateFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFromString.m"; sourceTree = "<group>"; };
-		DDEEE3D315DFB01C00DFA037 /* NSString+DateToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DateToString.h"; sourceTree = "<group>"; };
-		DDEEE3D415DFB01C00DFA037 /* NSString+DateToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DateToString.m"; sourceTree = "<group>"; };
-		DDEEE3D615DFB01C00DFA037 /* Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Choice.h; sourceTree = "<group>"; };
-		DDEEE3D715DFB01C00DFA037 /* Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Choice.m; sourceTree = "<group>"; };
-		DDEEE3D815DFB01C00DFA037 /* Poll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poll.h; sourceTree = "<group>"; };
-		DDEEE3D915DFB01C00DFA037 /* Poll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poll.m; sourceTree = "<group>"; };
-		DDEEE3DA15DFB01C00DFA037 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
-		DDEEE3DB15DFB01C00DFA037 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
-		DDEEE3DD15DFB01C00DFA037 /* ChoiceMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceMap.h; sourceTree = "<group>"; };
-		DDEEE3DE15DFB01C00DFA037 /* ChoiceMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceMap.m; sourceTree = "<group>"; };
-		DDEEE3DF15DFB01C00DFA037 /* ObjectMapperFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapperFactory.h; sourceTree = "<group>"; };
-		DDEEE3E015DFB01C00DFA037 /* ObjectMapperFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectMapperFactory.m; sourceTree = "<group>"; };
-		DDEEE3E115DFB01C00DFA037 /* ObjectMapProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapProtocol.h; sourceTree = "<group>"; };
-		DDEEE3E215DFB01C00DFA037 /* PollMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollMap.h; sourceTree = "<group>"; };
-		DDEEE3E315DFB01C00DFA037 /* PollMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollMap.m; sourceTree = "<group>"; };
-		DDEEE3E415DFB01C00DFA037 /* QuestionMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMap.h; sourceTree = "<group>"; };
-		DDEEE3E515DFB01C00DFA037 /* QuestionMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMap.m; sourceTree = "<group>"; };
+		DDEEE3F715E1308200DFA037 /* ChoiceCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceCommand.h; sourceTree = "<group>"; };
+		DDEEE3F815E1308200DFA037 /* ChoiceCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceCommand.m; sourceTree = "<group>"; };
+		DDEEE3F915E1308200DFA037 /* PollCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollCommand.h; sourceTree = "<group>"; };
+		DDEEE3FA15E1308200DFA037 /* PollCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollCommand.m; sourceTree = "<group>"; };
+		DDEEE3FB15E1308200DFA037 /* QuestionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCommand.h; sourceTree = "<group>"; };
+		DDEEE3FC15E1308200DFA037 /* QuestionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCommand.m; sourceTree = "<group>"; };
+		DDEEE3FE15E1308200DFA037 /* ApiBaseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiBaseCommand.h; sourceTree = "<group>"; };
+		DDEEE3FF15E1308200DFA037 /* ApiBaseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiBaseCommand.m; sourceTree = "<group>"; };
+		DDEEE40015E1308200DFA037 /* ApiError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiError.h; sourceTree = "<group>"; };
+		DDEEE40115E1308200DFA037 /* ApiError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiError.m; sourceTree = "<group>"; };
+		DDEEE40215E1308200DFA037 /* RestConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestConnection.h; sourceTree = "<group>"; };
+		DDEEE40315E1308200DFA037 /* RestConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestConnection.m; sourceTree = "<group>"; };
+		DDEEE40515E1308200DFA037 /* NSDate+DateFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFromString.h"; sourceTree = "<group>"; };
+		DDEEE40615E1308200DFA037 /* NSDate+DateFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFromString.m"; sourceTree = "<group>"; };
+		DDEEE40715E1308200DFA037 /* NSString+DateToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DateToString.h"; sourceTree = "<group>"; };
+		DDEEE40815E1308200DFA037 /* NSString+DateToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DateToString.m"; sourceTree = "<group>"; };
+		DDEEE40A15E1308200DFA037 /* Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Choice.h; sourceTree = "<group>"; };
+		DDEEE40B15E1308200DFA037 /* Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Choice.m; sourceTree = "<group>"; };
+		DDEEE40C15E1308200DFA037 /* Poll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poll.h; sourceTree = "<group>"; };
+		DDEEE40D15E1308200DFA037 /* Poll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poll.m; sourceTree = "<group>"; };
+		DDEEE40E15E1308200DFA037 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		DDEEE40F15E1308200DFA037 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		DDEEE41115E1308200DFA037 /* ChoiceMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceMap.h; sourceTree = "<group>"; };
+		DDEEE41215E1308200DFA037 /* ChoiceMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceMap.m; sourceTree = "<group>"; };
+		DDEEE41315E1308200DFA037 /* ObjectMapperFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapperFactory.h; sourceTree = "<group>"; };
+		DDEEE41415E1308200DFA037 /* ObjectMapperFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectMapperFactory.m; sourceTree = "<group>"; };
+		DDEEE41515E1308200DFA037 /* ObjectMapProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapProtocol.h; sourceTree = "<group>"; };
+		DDEEE41615E1308200DFA037 /* PollMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollMap.h; sourceTree = "<group>"; };
+		DDEEE41715E1308200DFA037 /* PollMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollMap.m; sourceTree = "<group>"; };
+		DDEEE41815E1308200DFA037 /* QuestionMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMap.h; sourceTree = "<group>"; };
+		DDEEE41915E1308200DFA037 /* QuestionMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 		DDC1F78215DD4EDD0029079D /* IOSExample */ = {
 			isa = PBXGroup;
 			children = (
-				DDEEE3C115DFB01C00DFA037 /* tastyphone_output */,
+				DDEEE3F515E1308200DFA037 /* tastyphone_output */,
 				DDC1F7DA15DD50A60029079D /* Resources */,
 				DDC1F7D215DD4F840029079D /* TableViewControllerWithLoader.h */,
 				DDC1F7D315DD4F840029079D /* TableViewControllerWithLoader.m */,
@@ -171,80 +171,80 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		DDEEE3C115DFB01C00DFA037 /* tastyphone_output */ = {
+		DDEEE3F515E1308200DFA037 /* tastyphone_output */ = {
 			isa = PBXGroup;
 			children = (
-				DDEEE3C215DFB01C00DFA037 /* api_commands */,
-				DDEEE3C915DFB01C00DFA037 /* connections */,
-				DDEEE3D015DFB01C00DFA037 /* helpers */,
-				DDEEE3D515DFB01C00DFA037 /* models */,
-				DDEEE3DC15DFB01C00DFA037 /* object_maps */,
+				DDEEE3F615E1308200DFA037 /* api_commands */,
+				DDEEE3FD15E1308200DFA037 /* connections */,
+				DDEEE40415E1308200DFA037 /* helpers */,
+				DDEEE40915E1308200DFA037 /* models */,
+				DDEEE41015E1308200DFA037 /* object_maps */,
 			);
 			path = tastyphone_output;
 			sourceTree = "<group>";
 		};
-		DDEEE3C215DFB01C00DFA037 /* api_commands */ = {
+		DDEEE3F615E1308200DFA037 /* api_commands */ = {
 			isa = PBXGroup;
 			children = (
-				DDEEE3C315DFB01C00DFA037 /* ChoiceCommand.h */,
-				DDEEE3C415DFB01C00DFA037 /* ChoiceCommand.m */,
-				DDEEE3C515DFB01C00DFA037 /* PollCommand.h */,
-				DDEEE3C615DFB01C00DFA037 /* PollCommand.m */,
-				DDEEE3C715DFB01C00DFA037 /* QuestionCommand.h */,
-				DDEEE3C815DFB01C00DFA037 /* QuestionCommand.m */,
+				DDEEE3F715E1308200DFA037 /* ChoiceCommand.h */,
+				DDEEE3F815E1308200DFA037 /* ChoiceCommand.m */,
+				DDEEE3F915E1308200DFA037 /* PollCommand.h */,
+				DDEEE3FA15E1308200DFA037 /* PollCommand.m */,
+				DDEEE3FB15E1308200DFA037 /* QuestionCommand.h */,
+				DDEEE3FC15E1308200DFA037 /* QuestionCommand.m */,
 			);
 			path = api_commands;
 			sourceTree = "<group>";
 		};
-		DDEEE3C915DFB01C00DFA037 /* connections */ = {
+		DDEEE3FD15E1308200DFA037 /* connections */ = {
 			isa = PBXGroup;
 			children = (
-				DDEEE3CA15DFB01C00DFA037 /* ApiBaseCommand.h */,
-				DDEEE3CB15DFB01C00DFA037 /* ApiBaseCommand.m */,
-				DDEEE3CC15DFB01C00DFA037 /* ApiError.h */,
-				DDEEE3CD15DFB01C00DFA037 /* ApiError.m */,
-				DDEEE3CE15DFB01C00DFA037 /* RestConnection.h */,
-				DDEEE3CF15DFB01C00DFA037 /* RestConnection.m */,
+				DDEEE3FE15E1308200DFA037 /* ApiBaseCommand.h */,
+				DDEEE3FF15E1308200DFA037 /* ApiBaseCommand.m */,
+				DDEEE40015E1308200DFA037 /* ApiError.h */,
+				DDEEE40115E1308200DFA037 /* ApiError.m */,
+				DDEEE40215E1308200DFA037 /* RestConnection.h */,
+				DDEEE40315E1308200DFA037 /* RestConnection.m */,
 			);
 			path = connections;
 			sourceTree = "<group>";
 		};
-		DDEEE3D015DFB01C00DFA037 /* helpers */ = {
+		DDEEE40415E1308200DFA037 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DDEEE3D115DFB01C00DFA037 /* NSDate+DateFromString.h */,
-				DDEEE3D215DFB01C00DFA037 /* NSDate+DateFromString.m */,
-				DDEEE3D315DFB01C00DFA037 /* NSString+DateToString.h */,
-				DDEEE3D415DFB01C00DFA037 /* NSString+DateToString.m */,
+				DDEEE40515E1308200DFA037 /* NSDate+DateFromString.h */,
+				DDEEE40615E1308200DFA037 /* NSDate+DateFromString.m */,
+				DDEEE40715E1308200DFA037 /* NSString+DateToString.h */,
+				DDEEE40815E1308200DFA037 /* NSString+DateToString.m */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
 		};
-		DDEEE3D515DFB01C00DFA037 /* models */ = {
+		DDEEE40915E1308200DFA037 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				DDEEE3D615DFB01C00DFA037 /* Choice.h */,
-				DDEEE3D715DFB01C00DFA037 /* Choice.m */,
-				DDEEE3D815DFB01C00DFA037 /* Poll.h */,
-				DDEEE3D915DFB01C00DFA037 /* Poll.m */,
-				DDEEE3DA15DFB01C00DFA037 /* Question.h */,
-				DDEEE3DB15DFB01C00DFA037 /* Question.m */,
+				DDEEE40A15E1308200DFA037 /* Choice.h */,
+				DDEEE40B15E1308200DFA037 /* Choice.m */,
+				DDEEE40C15E1308200DFA037 /* Poll.h */,
+				DDEEE40D15E1308200DFA037 /* Poll.m */,
+				DDEEE40E15E1308200DFA037 /* Question.h */,
+				DDEEE40F15E1308200DFA037 /* Question.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
 		};
-		DDEEE3DC15DFB01C00DFA037 /* object_maps */ = {
+		DDEEE41015E1308200DFA037 /* object_maps */ = {
 			isa = PBXGroup;
 			children = (
-				DDEEE3DD15DFB01C00DFA037 /* ChoiceMap.h */,
-				DDEEE3DE15DFB01C00DFA037 /* ChoiceMap.m */,
-				DDEEE3DF15DFB01C00DFA037 /* ObjectMapperFactory.h */,
-				DDEEE3E015DFB01C00DFA037 /* ObjectMapperFactory.m */,
-				DDEEE3E115DFB01C00DFA037 /* ObjectMapProtocol.h */,
-				DDEEE3E215DFB01C00DFA037 /* PollMap.h */,
-				DDEEE3E315DFB01C00DFA037 /* PollMap.m */,
-				DDEEE3E415DFB01C00DFA037 /* QuestionMap.h */,
-				DDEEE3E515DFB01C00DFA037 /* QuestionMap.m */,
+				DDEEE41115E1308200DFA037 /* ChoiceMap.h */,
+				DDEEE41215E1308200DFA037 /* ChoiceMap.m */,
+				DDEEE41315E1308200DFA037 /* ObjectMapperFactory.h */,
+				DDEEE41415E1308200DFA037 /* ObjectMapperFactory.m */,
+				DDEEE41515E1308200DFA037 /* ObjectMapProtocol.h */,
+				DDEEE41615E1308200DFA037 /* PollMap.h */,
+				DDEEE41715E1308200DFA037 /* PollMap.m */,
+				DDEEE41815E1308200DFA037 /* QuestionMap.h */,
+				DDEEE41915E1308200DFA037 /* QuestionMap.m */,
 			);
 			path = object_maps;
 			sourceTree = "<group>";
@@ -319,21 +319,21 @@
 				DDC1F7D915DD509E0029079D /* TableViewControllerWithLoader.m in Sources */,
 				DDC1F84E15DD7CD40029079D /* PollViewController.m in Sources */,
 				DD7E004215DE4FB700BC56C0 /* ChoicesViewController.m in Sources */,
-				DDEEE3E615DFB01C00DFA037 /* ChoiceCommand.m in Sources */,
-				DDEEE3E715DFB01C00DFA037 /* PollCommand.m in Sources */,
-				DDEEE3E815DFB01C00DFA037 /* QuestionCommand.m in Sources */,
-				DDEEE3E915DFB01C00DFA037 /* ApiBaseCommand.m in Sources */,
-				DDEEE3EA15DFB01C00DFA037 /* ApiError.m in Sources */,
-				DDEEE3EB15DFB01C00DFA037 /* RestConnection.m in Sources */,
-				DDEEE3EC15DFB01C00DFA037 /* NSDate+DateFromString.m in Sources */,
-				DDEEE3ED15DFB01C00DFA037 /* NSString+DateToString.m in Sources */,
-				DDEEE3EE15DFB01C00DFA037 /* Choice.m in Sources */,
-				DDEEE3EF15DFB01C00DFA037 /* Poll.m in Sources */,
-				DDEEE3F015DFB01C00DFA037 /* Question.m in Sources */,
-				DDEEE3F115DFB01C00DFA037 /* ChoiceMap.m in Sources */,
-				DDEEE3F215DFB01C00DFA037 /* ObjectMapperFactory.m in Sources */,
-				DDEEE3F315DFB01C00DFA037 /* PollMap.m in Sources */,
-				DDEEE3F415DFB01C00DFA037 /* QuestionMap.m in Sources */,
+				DDEEE41A15E1308200DFA037 /* ChoiceCommand.m in Sources */,
+				DDEEE41B15E1308200DFA037 /* PollCommand.m in Sources */,
+				DDEEE41C15E1308200DFA037 /* QuestionCommand.m in Sources */,
+				DDEEE41D15E1308200DFA037 /* ApiBaseCommand.m in Sources */,
+				DDEEE41E15E1308200DFA037 /* ApiError.m in Sources */,
+				DDEEE41F15E1308200DFA037 /* RestConnection.m in Sources */,
+				DDEEE42015E1308200DFA037 /* NSDate+DateFromString.m in Sources */,
+				DDEEE42115E1308200DFA037 /* NSString+DateToString.m in Sources */,
+				DDEEE42215E1308200DFA037 /* Choice.m in Sources */,
+				DDEEE42315E1308200DFA037 /* Poll.m in Sources */,
+				DDEEE42415E1308200DFA037 /* Question.m in Sources */,
+				DDEEE42515E1308200DFA037 /* ChoiceMap.m in Sources */,
+				DDEEE42615E1308200DFA037 /* ObjectMapperFactory.m in Sources */,
+				DDEEE42715E1308200DFA037 /* PollMap.m in Sources */,
+				DDEEE42815E1308200DFA037 /* QuestionMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

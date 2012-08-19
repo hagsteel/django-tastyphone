@@ -13,4 +13,5 @@ Create Objective-C code from Tasty pie schema
 
 TODO!!!
 -------
-Make sure read-only fields aren't being posted
+* Make sure read-only fields aren't being posted
+* Add support for authentication

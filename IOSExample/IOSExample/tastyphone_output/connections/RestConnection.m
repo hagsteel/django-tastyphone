@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 18/8/2012.
+//  Created by tastyphone on 19/8/2012.
 //
 
 #import "RESTConnection.h"
@@ -43,7 +43,7 @@
 	NSLog(@"Url [POST]: %@", url);
 	NSMutableURLRequest *request = [self createRequest:url];
 	[request setHTTPMethod:@"POST"];
-	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type:"];
 
 
 	NSMutableData *requestData = [[NSMutableData alloc] init];
@@ -71,45 +71,13 @@
 	NSMutableURLRequest *request = [self createRequest:url];
 	[request setHTTPMethod:@"PUT"];
 	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-	
-	
-	NSMutableData *requestData = [[NSMutableData alloc] init];
-	if (formData != nil) {
-		for (id key in [formData allKeys]) {
-			NSString *value = [formData objectForKey:key];
-			NSString *urlEncodedValue = [value stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-			NSString *v = [NSString stringWithFormat:@"&%@=%@", key, urlEncodedValue];
-			[requestData appendData:[v dataUsingEncoding:NSUTF8StringEncoding]];
-		}
-	}
-	
+
 	NSError *error;
 	NSData *putData = [NSJSONSerialization dataWithJSONObject:formData options:kNilOptions error:&error];
 	[request setHTTPBody:putData];
-//	[request setHTTPBody:requestData];
-	
-	
-	[requestData release];
-	
-	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-	
-	/*
-	NSMutableURLRequest *request = [self createRequest:url];
-	[request setHTTPMethod:@"PUT"];
-	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type:"];
-
-	NSMutableData *requestData = [[NSMutableData alloc] init];
-	for (id key in [formData allKeys]) {
-		NSString* urlEncodedValue = [[formData objectForKey:key] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-		NSString *v = [NSString stringWithFormat:@"&%@=%@", key, urlEncodedValue];
-		[requestData appendData:[v dataUsingEncoding:NSUTF8StringEncoding]];
-	}
-
-	[request setHTTPBody:requestData];
-	[requestData release];
 
 	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-	 */
+	[putData release];
 }
 
 #pragma mark - DELETE
@@ -153,15 +121,18 @@
 
 	NSError *error;
 	id obj = [NSJSONSerialization JSONObjectWithData:_receivedData options:kNilOptions error:&error];
-
+	NSString *strox = [NSString stringWithUTF8String:[_receivedData bytes]];
+	NSLog(strox);
 	if (_statuscode == 200) {
 		id<ObjectMapProtocol> objectMap = [[ObjectMapperFactory sharedInstance] getMapperForClass:_targetClass];
-		if (self.delegate != nil && objectMap != nil) {
+		if (self.delegate != nil && objectMap != nil && obj != nil) {
 			[self.delegate dataReceived:[objectMap mapObject:obj]];
 		} else {
 			[self.delegate dataReceived:nil];
 		}
-	} else {
+	} else if (_statuscode == 201) {
+		[self.delegate objectCreated];
+	}else {
 		if (_statuscode == 401) { // auth required
 //			if ([DPSettingsHelper isAuthenticatedUser] == YES)
 //				[DPSettingsHelper removeUserDetails];

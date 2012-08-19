@@ -17,7 +17,7 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
-    date_created = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now=True, editable=False)
     question = models.ForeignKey(Question, related_name='choices')
     description = models.CharField(max_length=30, help_text="go eat ham")
     count = models.IntegerField(default=0)

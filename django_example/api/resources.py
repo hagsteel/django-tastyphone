@@ -28,12 +28,12 @@ class QuestionResource(ModelResource):
             'poll': ('exact'),
         }
 
-#    def obj_update(self, bundle, request=None, **kwargs):
-#        super(QuestionResource,self).obj_update(bundle, request, **kwargs)
-
 
 class ChoiceResource(ModelResource):
     question = fields.RelatedField(QuestionResource, 'question', blank=True)
+    date_created = fields.DateTimeField(attribute='date_created', readonly=True)
+    id = fields.IntegerField(attribute='id', readonly=True)
+    question_id = fields.IntegerField(attribute='question_id')
 
     class Meta:
         resource_name = 'choice'
