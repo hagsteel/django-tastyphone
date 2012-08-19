@@ -8,26 +8,27 @@
 
 @implementation Choice
 
+@synthesize description;
 @synthesize dateCreated;
 @synthesize resourceUri;
-@synthesize description;
 @synthesize count;
 @synthesize ChoiceId;
+@synthesize questionId;
 
 
 - (id)init {
     if ((self = [super init])) {
+        description = [NSString new];
         dateCreated = [NSDate new];
         resourceUri = [NSString new];
-        description = [NSString new];
     }
     return self;
 }
 
 - (void)dealloc {
+    [description release];
     [dateCreated release];
     [resourceUri release];
-    [description release];
     [super dealloc];
 }
 

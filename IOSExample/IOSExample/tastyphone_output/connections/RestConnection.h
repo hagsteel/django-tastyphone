@@ -15,8 +15,6 @@
 - (void)dataReceived:(id)object;
 - (void)apiErrorReceived:(ApiError *)error;
 - (void)connectionError;
-- (void)objectCreated;
-- (void)objectUpdated;
 @end
 
 @interface RESTConnection : NSObject <NSURLConnectionDataDelegate> {
