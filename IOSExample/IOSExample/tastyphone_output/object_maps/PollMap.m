@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 19/8/2012.
+//  Created by tastyphone on 20/8/2012.
 //
 
 
@@ -14,13 +14,14 @@
 @implementation PollMap
 - (id)mapObject:(id)data {
 	if ([data objectForKey:@"objects"] != nil) {
-		NSMutableArray *items = [NSMutableArray new];
+		NSMutableArray *items = [[[NSMutableArray alloc] init] autorelease];
 		for (NSDictionary *a in [data objectForKey:@"objects"]){
 			[items addObject:[self mapInstance:a]];
 		}
 
 		return items;
 	}
+
  else {
 		return [self mapInstance:data];
 	}
@@ -28,7 +29,7 @@
 }
 
 - (id)mapInstance:(id)data {
-	Poll *instance = [[Poll alloc] init];
+	Poll *instance = [[[Poll alloc] init] autorelease];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
 	instance.title = [data objectForKey:@"title"];
 	instance.pollId = [[data objectForKey:@"id"] intValue];

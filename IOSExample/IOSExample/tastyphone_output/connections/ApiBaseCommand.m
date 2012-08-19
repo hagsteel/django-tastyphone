@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 19/8/2012.
+//  Created by tastyphone on 20/8/2012.
 //
 
 #import "ApiBaseCommand.h"
@@ -16,8 +16,8 @@
 	self = [super init];
 	if (self)
 	{
-		self.connection = [[RESTConnection alloc] initWithTargetClass:targetClass];
-		self.connection.delegate = self;
+		_connection = [[RESTConnection alloc] initWithTargetClass:targetClass];
+		_connection.delegate = self;
 	}
 	return self;
 }

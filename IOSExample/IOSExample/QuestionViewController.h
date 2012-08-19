@@ -10,9 +10,11 @@
 #import "QuestionCommand.h"
 #import "Poll.h"
 
-@interface QuestionViewController : TableViewControllerWithLoader <ApiCommandDelegate>
+@interface QuestionViewController : TableViewControllerWithLoader <ApiCommandDelegate> {
+	QuestionCommand *_questionCommand;
+	NSArray *_questions;
+}
 
 @property (nonatomic, retain) Poll *poll;
-@property (nonatomic, retain) NSArray *questions;
-@property (nonatomic, retain) QuestionCommand *questionCommand;
+
 @end

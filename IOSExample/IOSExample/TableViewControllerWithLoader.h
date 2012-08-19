@@ -7,7 +7,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewControllerWithLoader : UITableViewController
+@interface TableViewControllerWithLoader : UITableViewController {
+	UIActivityIndicatorView* _loader;
+	UIImageView* _loaderBackgroundView;
+}
 - (void)showLoader;
 - (void)hideLoader;
 @end

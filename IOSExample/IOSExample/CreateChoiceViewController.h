@@ -9,9 +9,11 @@
 #import "TableViewControllerWithLoader.h"
 #import "ChoiceCommand.h"
 
-@interface CreateChoiceViewController : TableViewControllerWithLoader <ApiCommandDelegate>
+@interface CreateChoiceViewController : TableViewControllerWithLoader <ApiCommandDelegate> {
+	ChoiceCommand *_choiceCommand;
+}
+
 @property (nonatomic, assign) NSInteger questionId;
-@property (nonatomic, retain) ChoiceCommand *choiceCommand;
 @property (retain, nonatomic) IBOutlet UITextField *choiceDescription;
 
 - (IBAction)createChoice:(id)sender;

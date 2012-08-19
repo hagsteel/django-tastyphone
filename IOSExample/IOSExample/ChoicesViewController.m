@@ -9,15 +9,11 @@
 #import "ChoicesViewController.h"
 #import "CreateChoiceViewController.h"
 
-@interface ChoicesViewController ()
-
-@end
-
 @implementation ChoicesViewController
 
 @synthesize question;
-@synthesize choices;
-@synthesize choiceCommand;
+//@synthesize choices;
+//@synthesize choiceCommand;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,15 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	if (self.choiceCommand == nil) {
-		self.choiceCommand = [ChoiceCommand new];
-		self.choiceCommand.delegate = self;
+	if (_choiceCommand == nil) {
+		_choiceCommand = [ChoiceCommand new];
+		_choiceCommand.delegate = self;
 	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[self showLoader];
-	[self.choiceCommand getChoiceByQuestion:[NSString stringWithFormat:@"%d", self.question.questionId]];
+	[_choiceCommand getChoiceByQuestion:[NSString stringWithFormat:@"%d", question.questionId]];
 }
 
 
@@ -48,7 +44,7 @@
 	if ([segue.identifier isEqualToString:@"add choice"])
 	{
 		CreateChoiceViewController *createChoiceViewController = segue.destinationViewController;
-		createChoiceViewController.questionId = self.question.questionId;
+		createChoiceViewController.questionId = question.questionId;
 	}
 }
 
@@ -57,7 +53,7 @@
 - (void)dataReceived:(id)object {
 	[self hideLoader];
 	if ([object isKindOfClass:[NSArray class]]) {
-		self.choices = object;
+		_choices = [object copy];
 	}
 	[self.tableView reloadData];
 }
@@ -80,31 +76,29 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.choices count];
+	return [_choices count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"choiceCell";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	if (cell == nil)
-		cell = [[UITableViewCell alloc] init];
 	
-	Choice* choice = [self.choices objectAtIndex:indexPath.row];
+	Choice* choice = [_choices objectAtIndex:indexPath.row];
 	cell.textLabel.text = [NSString stringWithFormat:@"%@ - %d", choice.description, choice.count];
     return cell;
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-	Choice* choice = [self.choices objectAtIndex:indexPath.row];
+	Choice* choice = [_choices objectAtIndex:indexPath.row];
 	choice.count++;
-	[self.choiceCommand updateChoice:choice withId:[NSString stringWithFormat:@"%d", choice.choiceId]];
+	[_choiceCommand updateChoice:choice withId:[NSString stringWithFormat:@"%d", choice.choiceId]];
 }
 
 - (void)dealloc {
-	[self.question release];
-	[self.choices release];
-	[self.choiceCommand release];
+	[question release];
+	[_choices release];
+	[_choiceCommand release];
 	[super dealloc];
 }
 

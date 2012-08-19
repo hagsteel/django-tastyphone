@@ -1,0 +1,7 @@
+{% include "class_heading.txt" %}
+
+#import <Foundation/Foundation.h>
+
+@protocol AuthenticationProtocol <NSObject>
+- (void)
+@end

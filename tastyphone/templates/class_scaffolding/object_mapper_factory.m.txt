@@ -17,7 +17,7 @@ static ObjectMapperFactory* sharedObjectMapper = nil;
 - (id)init {
 	if ((self = [super init])) {
 		NSArray *values = [NSArray arrayWithObjects:{% for m in model_maps %}
-                           [{{m}} new],{% endfor %} nil];
+                           [[[{{m}} alloc] init] autorelease],{% endfor %} nil];
 
 		NSArray *keys = [NSArray arrayWithObjects:{% for m in models %}
                          [{{m}} class],{% endfor %} nil];

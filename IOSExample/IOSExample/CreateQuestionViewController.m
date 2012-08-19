@@ -8,13 +8,8 @@
 
 #import "CreateQuestionViewController.h"
 
-@interface CreateQuestionViewController ()
-
-@end
-
 @implementation CreateQuestionViewController
 
-@synthesize questionCommand;
 @synthesize pollId;
 @synthesize questionName;
 
@@ -25,19 +20,20 @@
 }
 
 - (IBAction)createQuestion:(id)sender {
-	if (self.questionCommand == nil) {
-		self.questionCommand = [QuestionCommand new];
-		self.questionCommand.delegate = self;
+	if (_questionCommand == nil) {
+		_questionCommand = [[QuestionCommand alloc] init];
+		_questionCommand.delegate = self;
 	}
 
-	Question *q = [Question new];
+	Question *q = [[Question alloc] init];
 	q.pollId = self.pollId;
 	q.question = self.questionName.text;
-	[self.questionCommand createQuestion:q];
+	[_questionCommand createQuestion:q];
+	[q release];
 }
 
 - (void)dealloc {
-	[self.questionCommand release];
+	[_questionCommand release];
 	[questionName release];
 	[super dealloc];
 }

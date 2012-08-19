@@ -10,8 +10,9 @@
 #import "QuestionCommand.h"
 #import "Poll.h"
 
-@interface CreateQuestionViewController : TableViewControllerWithLoader <ApiCommandDelegate>
-@property (nonatomic, retain) QuestionCommand *questionCommand;
+@interface CreateQuestionViewController : TableViewControllerWithLoader <ApiCommandDelegate> {
+	QuestionCommand *_questionCommand;
+}
 @property (nonatomic, assign) NSInteger	pollId;
 
 @property (retain, nonatomic) IBOutlet UITextField *questionName;

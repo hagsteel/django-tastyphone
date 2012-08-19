@@ -6,8 +6,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ApiError : NSObject
-
-@property (nonatomic, retain) NSString *message;
-
+@protocol AuthenticationProtocol <NSObject>
+- (void)
 @end

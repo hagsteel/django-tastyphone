@@ -10,38 +10,32 @@
 #import "ChoicesViewController.h"
 #import "CreateQuestionViewController.h"
 
-@interface QuestionViewController ()
-
-@end
-
 @implementation QuestionViewController
 
 @synthesize poll;
-@synthesize questionCommand;
-@synthesize questions;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.questions = [NSArray new];
+	_questions = [[NSArray alloc] init];
 	
-	if (self.questionCommand == nil) {
-		self.questionCommand = [QuestionCommand new];
-		self.questionCommand.delegate = self;
+	if (_questionCommand == nil) {
+		_questionCommand = [[QuestionCommand alloc] init];
+		_questionCommand.delegate = self;
 	}
 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[self showLoader];
-	[self.questionCommand getQuestionByPoll:[NSString stringWithFormat:@"%d", self.poll.pollId]];
+	[_questionCommand getQuestionByPoll:[NSString stringWithFormat:@"%d", poll.pollId]];
 }
 
 #pragma mark - Api command delegate
 
 - (void)dataReceived:(id)object {
 	[self hideLoader];
-	self.questions = object;
+	_questions = [object copy];
 	[self.tableView reloadData];
 }
 
@@ -59,14 +53,14 @@
 	{
 		ChoicesViewController *choicesViewController = segue.destinationViewController;
 		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-		Question* q = [self.questions objectAtIndex:selectedIndexPath.row];
+		Question* q = [_questions objectAtIndex:selectedIndexPath.row];
 		choicesViewController.question = q;
 	}
 	
 	if ([segue.identifier isEqualToString:@"add question"])
 	{
 		CreateQuestionViewController *createQuestionViewController = segue.destinationViewController;
-		createQuestionViewController.pollId = self.poll.pollId;
+		createQuestionViewController.pollId = poll.pollId;
 	}
 }
 
@@ -80,26 +74,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.questions count];
+	return [_questions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"questionCell";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	if (cell == nil)
-		cell = [[UITableViewCell alloc] init];
 	
-	Question *question = [self.questions objectAtIndex:indexPath.row];
+	Question *question = [_questions objectAtIndex:indexPath.row];
 	cell.textLabel.text = question.question;
     return cell;
 }
 
 
 - (void)dealloc {
-	[self.poll release];
-	[self.questionCommand release];
-	[self.questions release];
+	[poll release];
+	[_questionCommand release];
+	[_questions release];
 	[super dealloc];
 }
 

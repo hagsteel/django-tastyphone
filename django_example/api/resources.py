@@ -13,6 +13,10 @@ class PollResource(ModelResource):
         allowed_methods = ['get', 'post', 'put', 'delete']
         authorization = Authorization()
 
+    def get_list(self, request, **kwargs):
+        a = 1
+        return super(PollResource, self).get_list(request, **kwargs)
+
 
 class QuestionResource(ModelResource):
     poll = fields.RelatedField(PollResource, 'poll', blank=True)

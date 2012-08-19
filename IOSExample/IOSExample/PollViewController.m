@@ -10,28 +10,25 @@
 #import "QuestionViewController.h"
 
 @interface PollViewController ()
-@property (nonatomic, retain) PollCommand* pollCommand;
+- (void)getPolls;
 @end
 
 @implementation PollViewController
 
-@synthesize pollCommand;
-@synthesize polls;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.polls = [NSArray new];
+	_polls = [[NSArray alloc] init];
 	
-	if (self.pollCommand == nil) {
-		self.pollCommand = [PollCommand new];
-		self.pollCommand.delegate = self;
+	if (_pollCommand == nil) {
+		_pollCommand = [PollCommand new];
+		_pollCommand.delegate = self;
 	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[self showLoader];
-	[self.pollCommand getPollList];
+	[self getPolls];
 }
 
 - (IBAction)editPolls:(id)sender {
@@ -42,14 +39,21 @@
 }
 
 
+- (void)getPolls {
+	[_pollCommand getPollList];
+}
+
 #pragma mark - Api command delegate
 
 - (void)dataReceived:(id)object {
+	static int retryCount = 3;
 	[self hideLoader];
 	if ([object isKindOfClass:[NSArray class]]) {
-		self.polls = object;
-	} else {
-		[self.pollCommand getPollList];
+		_polls = [object copy];
+		retryCount = 3;
+	} else if (object == nil && retryCount > 0) {
+		[_pollCommand getPollList];
+		retryCount--;
 	}
 	[self.tableView reloadData];
 }
@@ -68,7 +72,7 @@
 	{
 		QuestionViewController *questionViewController = segue.destinationViewController;
 		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-		Poll* p = [self.polls objectAtIndex:selectedIndexPath.row];
+		Poll* p = [_polls objectAtIndex:selectedIndexPath.row];
 		questionViewController.poll = p;
 	}
 }
@@ -83,19 +87,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	if (self.polls == nil)
+	if (_polls == nil)
 		return 0;
-	return [self.polls count];
+	return [_polls count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"pollCell";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	if (cell == nil)
-		cell = [[UITableViewCell alloc] init];
 	
-	Poll *poll = [self.polls objectAtIndex:indexPath.row];
+	Poll *poll = [_polls objectAtIndex:indexPath.row];
 	cell.textLabel.text = poll.title;
     
     return cell;
@@ -109,18 +111,16 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-		Poll *poll = [self.polls objectAtIndex:indexPath.row];
+		Poll *poll = [_polls objectAtIndex:indexPath.row];
 		if (poll == nil)
 			return;
-		[self.pollCommand deletePoll:[NSString stringWithFormat:@"%d", poll.pollId]];				
+		[_pollCommand deletePoll:[NSString stringWithFormat:@"%d", poll.pollId]];				
     }
 }
 
-
-
 - (void)dealloc {
-	[pollCommand release];
-	[polls release];
+	[_pollCommand release];
+	[_polls release];
 	[super dealloc];
 }
 

@@ -14,18 +14,21 @@
 
 - (id)mapObject:(id)data {
 	if ([data objectForKey:@"objects"] != nil) {
-		NSMutableArray *items = [NSMutableArray new];
+		NSMutableArray *items = [[[NSMutableArray alloc] init] autorelease];
 		for (NSDictionary *a in [data objectForKey:@"objects"]){
 			[items addObject:[self mapInstance:a]];
 		}
+
 		return items;
-	} else {
+	}
+ else {
 		return [self mapInstance:data];
 	}
 }
 
+
 - (id)mapInstance:(id)data {
-	{{model_name}} *instance = [[{{model_name}} alloc] init];
+	{{model_name}} *instance = [[[{{model_name}} alloc] init] autorelease];
 	{% for o in objects %}
 	instance.{{o.field_name}} = {{o|data_binding}};
 	{% endfor %}

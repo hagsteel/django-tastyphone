@@ -10,9 +10,12 @@
 #import "ChoiceCommand.h"
 #import "Question.h"
 
-@interface ChoicesViewController : TableViewControllerWithLoader <ApiCommandDelegate>
-@property (nonatomic, retain) NSArray *choices;
+@interface ChoicesViewController : TableViewControllerWithLoader <ApiCommandDelegate> {
+	NSArray *_choices;
+	ChoiceCommand *_choiceCommand;
+}
+//@property (nonatomic, retain) NSArray *choices;
 @property (nonatomic, retain) Question *question;
-@property (nonatomic, retain) ChoiceCommand* choiceCommand;
+//@property (nonatomic, retain) 
 
 @end

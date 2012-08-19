@@ -8,13 +8,8 @@
 
 #import "CreateChoiceViewController.h"
 
-@interface CreateChoiceViewController ()
-
-@end
-
 @implementation CreateChoiceViewController
 
-@synthesize choiceCommand;
 @synthesize choiceDescription;
 @synthesize questionId;
 
@@ -34,18 +29,19 @@
 }
 
 - (IBAction)createChoice:(id)sender {
-	if (self.choiceCommand == nil) {
-		self.choiceCommand = [ChoiceCommand new];
-		self.choiceCommand.delegate = self;
+	if (_choiceCommand == nil) {
+		_choiceCommand = [ChoiceCommand new];
+		_choiceCommand.delegate = self;
 	}
 	Choice *choice = [Choice new];
 	choice.questionId = self.questionId;
 	choice.description = self.choiceDescription.text;
-	[self.choiceCommand createChoice:choice];
+	[_choiceCommand createChoice:choice];
+	[choice release];
 }
 
 - (void)dealloc {
-	[self.choiceCommand release];
+	[_choiceCommand release];
 	[choiceDescription release];
 	[super dealloc];
 }

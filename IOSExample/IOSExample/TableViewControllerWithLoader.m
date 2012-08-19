@@ -8,45 +8,40 @@
 #import "TableViewControllerWithLoader.h"
 
 @interface TableViewControllerWithLoader ()
-@property (nonatomic, strong) UIActivityIndicatorView* loader;
-@property (nonatomic, strong) UIImageView *loaderBackgroundView;
 - (void)centerLoader;
 @end
 
 @implementation TableViewControllerWithLoader
 
-@synthesize loader;
-@synthesize loaderBackgroundView;
-
 - (void)showLoader {
-	if (self.loader == nil) {
-		self.loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		self.loaderBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loader_background"]];
-		[self.view addSubview:self.loaderBackgroundView];
-		self.loader.frame = CGRectMake(self.loaderBackgroundView.center.x - (self.loader.frame.size.width / 2), 
-									   self.loaderBackgroundView.center.y - (self.loader.frame.size.height / 2), 
-									   self.loader.frame.size.width, 
-									   self.loader.frame.size.height);
-		[self.loaderBackgroundView addSubview:self.loader];
+	if (_loader == nil) {
+		_loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+		_loaderBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loader_background"]];
+		[self.view addSubview:_loaderBackgroundView];
+		_loader.frame = CGRectMake(_loaderBackgroundView.center.x - (_loader.frame.size.width / 2), 
+									   _loaderBackgroundView.center.y - (_loader.frame.size.height / 2), 
+									   _loader.frame.size.width, 
+									   _loader.frame.size.height);
+		[_loaderBackgroundView addSubview:_loader];
 	}
 	[self centerLoader];
-	[self.view bringSubviewToFront:self.loaderBackgroundView];
-	self.loaderBackgroundView.hidden = NO;
-	[self.loader startAnimating];
+	[self.view bringSubviewToFront:_loaderBackgroundView];
+	_loaderBackgroundView.hidden = NO;
+	[_loader startAnimating];
 	[self.view setUserInteractionEnabled:NO];
 }
 
 - (void)hideLoader {
 	[self.view setUserInteractionEnabled:YES];
-	[self.loader stopAnimating];
-	self.loaderBackgroundView.hidden = YES;
+	[_loader stopAnimating];
+	_loaderBackgroundView.hidden = YES;
 }
 
 - (void)centerLoader {
-	self.loaderBackgroundView.frame = CGRectMake(self.view.center.x - (self.loaderBackgroundView.frame.size.width / 2), 
-												 self.view.center.y - (self.loaderBackgroundView.frame.size.height / 2), 
-												 self.loaderBackgroundView.frame.size.width, 
-												 self.loaderBackgroundView.frame.size.height);
+	_loaderBackgroundView.frame = CGRectMake(self.view.center.x - (_loaderBackgroundView.frame.size.width / 2), 
+												 self.view.center.y - (_loaderBackgroundView.frame.size.height / 2), 
+												 _loaderBackgroundView.frame.size.width, 
+												 _loaderBackgroundView.frame.size.height);
 	
 }
 

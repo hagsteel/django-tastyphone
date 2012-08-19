@@ -14,27 +14,28 @@
 
 @implementation CreatePollViewController
 
-@synthesize pollCommand;
+//@synthesize pollCommand;
 @synthesize pollTitle;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	if (pollCommand == nil) {
+		pollCommand = [[PollCommand alloc] init];
+		pollCommand.delegate = self;
+	}
 	// Do any additional setup after loading the view.
 }
 
 - (IBAction)createPoll:(id)sender {
-	if (self.pollCommand == nil) {
-		self.pollCommand = [PollCommand new];
-		self.pollCommand.delegate = self;
-	}
-	Poll *p = [Poll new];
+	Poll *p = [[Poll alloc] init];
 	p.title = self.pollTitle.text;
-	[self.pollCommand createPoll:p];
+	[pollCommand createPoll:p];
+	[p release];
 }
 
 - (void)dealloc {
-	[self.pollCommand release];
+	[pollCommand release];
 	[pollTitle release];
 	[super dealloc];
 }
