@@ -31,7 +31,8 @@
 	Question *instance = [[Question alloc] init];
 	instance.question = [data objectForKey:@"question"];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
-	instance.QuestionId = [[data objectForKey:@"id"] intValue];
+	instance.questionId = [[data objectForKey:@"id"] intValue];
+	instance.pollId = [[data objectForKey:@"poll_id"] intValue];
 	return instance;
 }
 

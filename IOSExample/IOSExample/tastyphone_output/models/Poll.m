@@ -10,7 +10,7 @@
 
 @synthesize resourceUri;
 @synthesize title;
-@synthesize PollId;
+@synthesize pollId;
 
 
 - (id)init {

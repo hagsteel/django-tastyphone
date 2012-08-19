@@ -42,5 +42,5 @@ class Model(object):
 
     def format_safe_field_name(self, name):
         if name == 'id':
-            return '%sId' % self.name
+            return '%sId' % self.name.lower()
         return name

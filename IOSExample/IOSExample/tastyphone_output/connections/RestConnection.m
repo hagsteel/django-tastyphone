@@ -39,41 +39,17 @@
 #pragma mark - POST
 - (void)makePostRequest:(NSDictionary *)formData withDestination:(NSString *)destination
 {
-	/*
 	NSURL *url = [self getUrl:destination];
 	NSLog(@"Url [POST]: %@", url);
-	NSMutableURLRequest *request = [self createRequest:url];
-	[request setHTTPMethod:@"POST"];
-	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type:"];
 
-
-	NSMutableData *requestData = [[NSMutableData alloc] init];
-	if (formData != nil) {
-		for (id key in [formData allKeys]) {
-			NSString *value = [formData objectForKey:key];
-			NSString *urlEncodedValue = [value stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-			NSString *v = [NSString stringWithFormat:@"&%@=%@", key, urlEncodedValue];
-			[requestData appendData:[v dataUsingEncoding:NSUTF8StringEncoding]];
-		}
-	}
-
-	[request setHTTPBody:requestData];
-	[requestData release];
-
-	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-	*/
-	
-	NSURL *url = [self getUrl:destination];
-	NSLog(@"Url [POST]: %@", url);
-	
 	NSMutableURLRequest *request = [self createRequest:url];
 	[request setHTTPMethod:@"POST"];
 	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-	
+
 	NSError *error;
 	NSData *putData = [NSJSONSerialization dataWithJSONObject:formData options:kNilOptions error:&error];
 	[request setHTTPBody:putData];
-	
+
 	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
 	[putData release];
 }

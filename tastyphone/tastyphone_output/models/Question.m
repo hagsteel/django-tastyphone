@@ -10,7 +10,8 @@
 
 @synthesize question;
 @synthesize resourceUri;
-@synthesize QuestionId;
+@synthesize questionId;
+@synthesize pollId;
 
 
 - (id)init {

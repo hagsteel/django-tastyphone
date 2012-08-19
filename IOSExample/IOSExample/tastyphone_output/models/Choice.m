@@ -12,7 +12,7 @@
 @synthesize dateCreated;
 @synthesize resourceUri;
 @synthesize count;
-@synthesize ChoiceId;
+@synthesize choiceId;
 @synthesize questionId;
 
 

@@ -25,10 +25,10 @@
 }
 
 - (NSDictionary*)dictionaryFromModel:(Question*)aQuestion {
-        NSArray *keys = [NSArray arrayWithObjects:@"question", @"id", nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"question", @"poll_id", nil];
         NSArray *values = [NSArray arrayWithObjects:
         aQuestion.question,
-        [NSString stringWithFormat:@"%d", aQuestion.QuestionId],
+        [NSString stringWithFormat:@"%d", aQuestion.pollId],
             nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;

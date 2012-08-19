@@ -8,6 +8,7 @@
 
 #import "QuestionViewController.h"
 #import "ChoicesViewController.h"
+#import "CreateQuestionViewController.h"
 
 @interface QuestionViewController ()
 
@@ -33,7 +34,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[self showLoader];
-	[self.questionCommand getQuestionByPoll:[NSString stringWithFormat:@"%d", self.poll.PollId]];
+	[self.questionCommand getQuestionByPoll:[NSString stringWithFormat:@"%d", self.poll.pollId]];
 }
 
 #pragma mark - Api command delegate
@@ -60,6 +61,14 @@
 		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
 		Question* q = [self.questions objectAtIndex:selectedIndexPath.row];
 		choicesViewController.question = q;
+	}
+	
+	if ([segue.identifier isEqualToString:@"add question"])
+	{
+		CreateQuestionViewController *createQuestionViewController = segue.destinationViewController;
+		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+		Question* q = [self.questions objectAtIndex:selectedIndexPath.row];
+		createQuestionViewController.pollId = q.pollId;
 	}
 }
 

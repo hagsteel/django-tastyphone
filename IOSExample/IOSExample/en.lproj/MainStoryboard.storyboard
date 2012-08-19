@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="3Jx-qA-fQ3">
+                            <tableViewSection id="SWn-ft-VRh">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="46Z-Nb-xxQ">
                                         <rect key="frame" x="0.0" y="10" width="320" height="45"/>
@@ -76,6 +76,77 @@
             </objects>
             <point key="canvasLocation" x="-506" y="-532"/>
         </scene>
+        <!--Create Question View Controller-->
+        <scene sceneID="peo-AI-yrX">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3O0-Fh-w03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Sy4-KF-U6Y" customClass="CreateQuestionViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zyi-re-OZu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="GKn-cj-KHd">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Q8P-3A-gtn">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" minimumFontSize="17" id="yf6-Gx-zpw">
+                                                    <rect key="frame" x="6" y="6" width="289" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9vm-Ld-qOa">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Blh-it-YBW">
+                                                    <rect key="frame" x="0.0" y="3" width="300" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="create">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="createQuestion:" destination="Sy4-KF-U6Y" eventType="touchUpInside" id="1sH-ll-L0r"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Sy4-KF-U6Y" id="x9r-jt-ZZe"/>
+                            <outlet property="delegate" destination="Sy4-KF-U6Y" id="CP3-ge-4Db"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="CRI-Xf-AtN"/>
+                    <connections>
+                        <outlet property="questionName" destination="yf6-Gx-zpw" id="0Km-ju-9ks"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="34" y="-532"/>
+        </scene>
         <!--Question View Controller - Questions-->
         <scene sceneID="XKP-s5-W33">
             <objects>
@@ -104,7 +175,13 @@
                             <outlet property="delegate" destination="lKg-DG-OqN" id="wUf-zK-ybc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Questions" id="wdS-uj-ZwN"/>
+                    <navigationItem key="navigationItem" title="Questions" id="wdS-uj-ZwN">
+                        <barButtonItem key="rightBarButtonItem" title="add question" id="kJA-5d-xJc">
+                            <connections>
+                                <segue destination="Sy4-KF-U6Y" kind="push" identifier="add question" id="Kff-7n-o9C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2" y="122"/>
@@ -190,26 +267,6 @@
             <point key="canvasLocation" x="-1147" y="48"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ChoicesViewController" superclassName="TableViewControllerWithLoader">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChoicesViewController.h"/>
-        </class>
-        <class className="CreatePollViewController" superclassName="TableViewControllerWithLoader">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatePollViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="createPoll:"/>
-            </relationships>
-        </class>
-        <class className="PollViewController" superclassName="TableViewControllerWithLoader">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PollViewController.h"/>
-        </class>
-        <class className="QuestionViewController" superclassName="TableViewControllerWithLoader">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionViewController.h"/>
-        </class>
-        <class className="TableViewControllerWithLoader" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewControllerWithLoader.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

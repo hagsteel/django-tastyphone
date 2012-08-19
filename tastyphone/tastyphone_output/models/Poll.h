@@ -11,7 +11,7 @@
 
 @property (nonatomic, retain) NSString *resourceUri;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, assign) NSInteger PollId;
+@property (nonatomic, assign) NSInteger pollId;
 
 
 @end

@@ -33,7 +33,7 @@
 	instance.dateCreated = [NSDate dateFromString:[data objectForKey:@"date_created"]];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
 	instance.count = [[data objectForKey:@"count"] intValue];
-	instance.ChoiceId = [[data objectForKey:@"id"] intValue];
+	instance.choiceId = [[data objectForKey:@"id"] intValue];
 	instance.questionId = [[data objectForKey:@"question_id"] intValue];
 	return instance;
 }

@@ -31,7 +31,7 @@
 	Poll *instance = [[Poll alloc] init];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
 	instance.title = [data objectForKey:@"title"];
-	instance.PollId = [[data objectForKey:@"id"] intValue];
+	instance.pollId = [[data objectForKey:@"id"] intValue];
 	return instance;
 }
 

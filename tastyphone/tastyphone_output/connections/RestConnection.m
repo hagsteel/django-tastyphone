@@ -41,25 +41,17 @@
 {
 	NSURL *url = [self getUrl:destination];
 	NSLog(@"Url [POST]: %@", url);
+
 	NSMutableURLRequest *request = [self createRequest:url];
 	[request setHTTPMethod:@"POST"];
-	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type:"];
+	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 
-
-	NSMutableData *requestData = [[NSMutableData alloc] init];
-	if (formData != nil) {
-		for (id key in [formData allKeys]) {
-			NSString *value = [formData objectForKey:key];
-			NSString *urlEncodedValue = [value stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-			NSString *v = [NSString stringWithFormat:@"&%@=%@", key, urlEncodedValue];
-			[requestData appendData:[v dataUsingEncoding:NSUTF8StringEncoding]];
-		}
-	}
-
-	[request setHTTPBody:requestData];
-	[requestData release];
+	NSError *error;
+	NSData *putData = [NSJSONSerialization dataWithJSONObject:formData options:kNilOptions error:&error];
+	[request setHTTPBody:putData];
 
 	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+	[putData release];
 }
 
 #pragma mark - PUT
@@ -122,7 +114,7 @@
 	NSError *error;
 	id obj = [NSJSONSerialization JSONObjectWithData:_receivedData options:kNilOptions error:&error];
 
-	if (_statuscode == 200) {
+	if (_statuscode >= 200 && _statuscode < 300) {
 		id<ObjectMapProtocol> objectMap = [[ObjectMapperFactory sharedInstance] getMapperForClass:_targetClass];
 		if (self.delegate != nil && objectMap != nil && obj != nil) {
 			[self.delegate dataReceived:[objectMap mapObject:obj]];

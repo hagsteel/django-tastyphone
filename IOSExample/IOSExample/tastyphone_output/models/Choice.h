@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSDate *dateCreated;
 @property (nonatomic, retain) NSString *resourceUri;
 @property (nonatomic, assign) NSInteger count;
-@property (nonatomic, assign) NSInteger ChoiceId;
+@property (nonatomic, assign) NSInteger choiceId;
 @property (nonatomic, assign) NSInteger questionId;
 
 

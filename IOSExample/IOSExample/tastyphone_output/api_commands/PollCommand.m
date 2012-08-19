@@ -25,11 +25,10 @@
 }
 
 - (NSDictionary*)dictionaryFromModel:(Poll*)aPoll {
-        NSArray *keys = [NSArray arrayWithObjects:@"title", @"id", nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"title", nil];
         NSArray *values = [NSArray arrayWithObjects:
         aPoll.title,
-        [NSString stringWithFormat:@"%d", aPoll.PollId],
-            nil];
+        nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;
 }

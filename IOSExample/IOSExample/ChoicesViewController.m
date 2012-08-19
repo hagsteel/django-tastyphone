@@ -34,7 +34,7 @@
 		self.choiceCommand = [ChoiceCommand new];
 		self.choiceCommand.delegate = self;
 	}
-	[self.choiceCommand getChoiceByQuestion:[NSString stringWithFormat:@"%d", self.question.QuestionId]];
+	[self.choiceCommand getChoiceByQuestion:[NSString stringWithFormat:@"%d", self.question.questionId]];
 }
 
 - (void)viewDidUnload
@@ -94,7 +94,7 @@
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
 	Choice* choice = [self.choices objectAtIndex:indexPath.row];
 	choice.count++;
-	[self.choiceCommand updateChoice:choice withId:[NSString stringWithFormat:@"%d", choice.ChoiceId]];
+	[self.choiceCommand updateChoice:choice withId:[NSString stringWithFormat:@"%d", choice.choiceId]];
 }
 
 - (void)dealloc {
