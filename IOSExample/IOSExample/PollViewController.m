@@ -34,11 +34,23 @@
 	[self.pollCommand getPollList];
 }
 
+- (IBAction)editPolls:(id)sender {
+	if (self.tableView.editing == YES)
+		[self.tableView setEditing:NO animated:YES];
+	else
+		[self.tableView setEditing:YES animated:YES];
+}
+
+
 #pragma mark - Api command delegate
 
 - (void)dataReceived:(id)object {
 	[self hideLoader];
-	self.polls = object;
+	if ([object isKindOfClass:[NSArray class]]) {
+		self.polls = object;
+	} else {
+		[self.pollCommand getPollList];
+	}
 	[self.tableView reloadData];
 }
 
@@ -88,6 +100,22 @@
     
     return cell;
 }
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+		Poll *poll = [self.polls objectAtIndex:indexPath.row];
+		if (poll == nil)
+			return;
+		[self.pollCommand deletePoll:[NSString stringWithFormat:@"%d", poll.pollId]];				
+    }
+}
+
 
 
 - (void)dealloc {

@@ -11,4 +11,7 @@
 
 @interface PollViewController : TableViewControllerWithLoader  <ApiCommandDelegate>
 @property (nonatomic, retain) NSArray *polls;
+
+- (IBAction)editPolls:(id)sender;
+
 @end

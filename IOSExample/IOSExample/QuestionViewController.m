@@ -66,9 +66,7 @@
 	if ([segue.identifier isEqualToString:@"add question"])
 	{
 		CreateQuestionViewController *createQuestionViewController = segue.destinationViewController;
-		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-		Question* q = [self.questions objectAtIndex:selectedIndexPath.row];
-		createQuestionViewController.pollId = q.pollId;
+		createQuestionViewController.pollId = self.poll.pollId;
 	}
 }
 

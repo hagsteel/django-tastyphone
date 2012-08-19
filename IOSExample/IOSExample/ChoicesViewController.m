@@ -7,6 +7,7 @@
 //
 
 #import "ChoicesViewController.h"
+#import "CreateChoiceViewController.h"
 
 @interface ChoicesViewController ()
 
@@ -34,18 +35,21 @@
 		self.choiceCommand = [ChoiceCommand new];
 		self.choiceCommand.delegate = self;
 	}
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[self showLoader];
 	[self.choiceCommand getChoiceByQuestion:[NSString stringWithFormat:@"%d", self.question.questionId]];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	if ([segue.identifier isEqualToString:@"add choice"])
+	{
+		CreateChoiceViewController *createChoiceViewController = segue.destinationViewController;
+		createChoiceViewController.questionId = self.question.questionId;
+	}
 }
 
 #pragma mark - Api command delegate

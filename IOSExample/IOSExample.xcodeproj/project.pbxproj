@@ -36,6 +36,7 @@
 		DDEEE49415E1797100DFA037 /* ObjectMapperFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE48215E1797100DFA037 /* ObjectMapperFactory.m */; };
 		DDEEE49515E1797100DFA037 /* PollMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE48515E1797100DFA037 /* PollMap.m */; };
 		DDEEE49615E1797100DFA037 /* QuestionMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE48715E1797100DFA037 /* QuestionMap.m */; };
+		DDEEE49915E1824200DFA037 /* CreateChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE49815E1824200DFA037 /* CreateChoiceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		DDEEE48515E1797100DFA037 /* PollMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollMap.m; sourceTree = "<group>"; };
 		DDEEE48615E1797100DFA037 /* QuestionMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMap.h; sourceTree = "<group>"; };
 		DDEEE48715E1797100DFA037 /* QuestionMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMap.m; sourceTree = "<group>"; };
+		DDEEE49715E1824100DFA037 /* CreateChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateChoiceViewController.h; sourceTree = "<group>"; };
+		DDEEE49815E1824200DFA037 /* CreateChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateChoiceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +158,11 @@
 				DD7E004115DE4FB700BC56C0 /* ChoicesViewController.m */,
 				DDEEE45D15E1657700DFA037 /* CreatePollViewController.h */,
 				DDEEE45E15E1657700DFA037 /* CreatePollViewController.m */,
-				DDC1F78315DD4EDD0029079D /* Supporting Files */,
 				DDEEE46015E1781100DFA037 /* CreateQuestionViewController.h */,
 				DDEEE46115E1781100DFA037 /* CreateQuestionViewController.m */,
+				DDEEE49715E1824100DFA037 /* CreateChoiceViewController.h */,
+				DDEEE49815E1824200DFA037 /* CreateChoiceViewController.m */,
+				DDC1F78315DD4EDD0029079D /* Supporting Files */,
 			);
 			path = IOSExample;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				DDEEE49415E1797100DFA037 /* ObjectMapperFactory.m in Sources */,
 				DDEEE49515E1797100DFA037 /* PollMap.m in Sources */,
 				DDEEE49615E1797100DFA037 /* QuestionMap.m in Sources */,
+				DDEEE49915E1824200DFA037 /* CreateChoiceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
