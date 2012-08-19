@@ -25,10 +25,11 @@
 }
 
 - (NSDictionary*)dictionaryFromModel:(Choice*)aChoice {
-        NSArray *keys = [NSArray arrayWithObjects:@"description", @"count", nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"description", @"count", @"question_id", nil];
         NSArray *values = [NSArray arrayWithObjects:
         aChoice.description,
         [NSString stringWithFormat:@"%d", aChoice.count],
+            [NSString stringWithFormat:@"%d", aChoice.questionId],
             nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;

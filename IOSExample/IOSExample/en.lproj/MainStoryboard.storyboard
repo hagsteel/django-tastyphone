@@ -5,7 +5,78 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
-        <!--Question View Controller-->
+        <!--Create Poll View Controller-->
+        <scene sceneID="Ktm-BN-Hdd">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XhR-Er-zct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Cvp-q1-cGf" customClass="CreatePollViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Xsf-MN-ATf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="3Jx-qA-fQ3">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="46Z-Nb-xxQ">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Poll name" minimumFontSize="17" id="Wky-Ng-Zyu">
+                                                    <rect key="frame" x="6" y="6" width="288" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Lps-tm-cau">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rHu-NT-taM">
+                                                    <rect key="frame" x="0.0" y="3" width="300" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="create">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="createPoll:" destination="Cvp-q1-cGf" eventType="touchUpInside" id="CFs-x2-anl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Cvp-q1-cGf" id="6UH-Od-ea4"/>
+                            <outlet property="delegate" destination="Cvp-q1-cGf" id="dew-Y1-8PQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="wj8-cl-lYI"/>
+                    <connections>
+                        <outlet property="pollTitle" destination="Wky-Ng-Zyu" id="aFu-70-QAI"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-506" y="-532"/>
+        </scene>
+        <!--Question View Controller - Questions-->
         <scene sceneID="XKP-s5-W33">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRd-Dj-VE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -33,12 +104,12 @@
                             <outlet property="delegate" destination="lKg-DG-OqN" id="wUf-zK-ybc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wdS-uj-ZwN"/>
+                    <navigationItem key="navigationItem" title="Questions" id="wdS-uj-ZwN"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2" y="122"/>
         </scene>
-        <!--Choices View Controller-->
+        <!--Choices View Controller - Choices-->
         <scene sceneID="eaR-uW-trv">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9g-WW-fea" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,12 +134,12 @@
                             <outlet property="delegate" destination="vdr-2B-lu9" id="KpD-YT-kBQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9mc-6R-uXF"/>
+                    <navigationItem key="navigationItem" title="Choices" id="9mc-6R-uXF"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="513" y="130"/>
         </scene>
-        <!--Poll View Controller - Root View Controller-->
+        <!--Poll View Controller - Polls-->
         <scene sceneID="Tqf-2S-8ii">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lrt-3c-Wds" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,7 +163,13 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="EYe-br-8CX"/>
+                    <navigationItem key="navigationItem" title="Polls" id="EYe-br-8CX">
+                        <barButtonItem key="rightBarButtonItem" title="create poll" id="mvO-JR-rhC">
+                            <connections>
+                                <segue destination="Cvp-q1-cGf" kind="push" id="ah6-b2-wf1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="-506" y="122"/>
@@ -116,8 +193,11 @@
     <classes>
         <class className="ChoicesViewController" superclassName="TableViewControllerWithLoader">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChoicesViewController.h"/>
+        </class>
+        <class className="CreatePollViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatePollViewController.h"/>
             <relationships>
-                <relationship kind="action" name="voteClick:"/>
+                <relationship kind="action" name="createPoll:"/>
             </relationships>
         </class>
         <class className="PollViewController" superclassName="TableViewControllerWithLoader">

@@ -52,7 +52,9 @@
 
 - (void)dataReceived:(id)object {
 	[self hideLoader];
-	self.choices = object;
+	if ([object isKindOfClass:[NSArray class]]) {
+		self.choices = object;
+	}
 	[self.tableView reloadData];
 }
 

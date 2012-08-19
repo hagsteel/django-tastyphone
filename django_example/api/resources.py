@@ -5,7 +5,7 @@ from django_example.models import Poll, Question, Choice
 
 
 class PollResource(ModelResource):
-#    questions = fields.ManyToManyField('django_example.api.resources.QuestionResource','questions')
+    id = fields.IntegerField(attribute='id', readonly=True)
 
     class Meta:
         resource_name = 'poll'
@@ -15,9 +15,9 @@ class PollResource(ModelResource):
 
 
 class QuestionResource(ModelResource):
-#    choices = fields.ManyToManyField('django_example.api.resources.ChoiceResource','choices')
-
     poll = fields.RelatedField(PollResource, 'poll', blank=True)
+    id = fields.IntegerField(attribute='id', readonly=True)
+    poll_id = fields.IntegerField(attribute='poll_id')
 
     class Meta:
         resource_name = 'question'
@@ -43,4 +43,3 @@ class ChoiceResource(ModelResource):
         filtering = {
             'question': ('exact'),
         }
-

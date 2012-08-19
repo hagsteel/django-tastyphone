@@ -124,7 +124,7 @@
 
 	if (_statuscode == 200) {
 		id<ObjectMapProtocol> objectMap = [[ObjectMapperFactory sharedInstance] getMapperForClass:_targetClass];
-		if (self.delegate != nil && objectMap != nil) {
+		if (self.delegate != nil && objectMap != nil && obj != nil) {
 			[self.delegate dataReceived:[objectMap mapObject:obj]];
 		} else {
 			[self.delegate dataReceived:nil];

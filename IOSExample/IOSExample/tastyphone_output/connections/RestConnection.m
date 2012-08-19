@@ -39,6 +39,7 @@
 #pragma mark - POST
 - (void)makePostRequest:(NSDictionary *)formData withDestination:(NSString *)destination
 {
+	/*
 	NSURL *url = [self getUrl:destination];
 	NSLog(@"Url [POST]: %@", url);
 	NSMutableURLRequest *request = [self createRequest:url];
@@ -60,6 +61,21 @@
 	[requestData release];
 
 	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+	*/
+	
+	NSURL *url = [self getUrl:destination];
+	NSLog(@"Url [POST]: %@", url);
+	
+	NSMutableURLRequest *request = [self createRequest:url];
+	[request setHTTPMethod:@"POST"];
+	[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+	
+	NSError *error;
+	NSData *putData = [NSJSONSerialization dataWithJSONObject:formData options:kNilOptions error:&error];
+	[request setHTTPBody:putData];
+	
+	_urlConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+	[putData release];
 }
 
 #pragma mark - PUT
@@ -121,18 +137,15 @@
 
 	NSError *error;
 	id obj = [NSJSONSerialization JSONObjectWithData:_receivedData options:kNilOptions error:&error];
-	NSString *strox = [NSString stringWithUTF8String:[_receivedData bytes]];
-	NSLog(strox);
-	if (_statuscode == 200) {
+
+	if (_statuscode >= 200 && _statuscode < 300) {
 		id<ObjectMapProtocol> objectMap = [[ObjectMapperFactory sharedInstance] getMapperForClass:_targetClass];
 		if (self.delegate != nil && objectMap != nil && obj != nil) {
 			[self.delegate dataReceived:[objectMap mapObject:obj]];
 		} else {
 			[self.delegate dataReceived:nil];
 		}
-	} else if (_statuscode == 201) {
-		[self.delegate objectCreated];
-	}else {
+	} else {
 		if (_statuscode == 401) { // auth required
 //			if ([DPSettingsHelper isAuthenticatedUser] == YES)
 //				[DPSettingsHelper removeUserDetails];

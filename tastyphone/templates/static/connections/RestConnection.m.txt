@@ -118,7 +118,7 @@
 	NSError *error;
 	id obj = [NSJSONSerialization JSONObjectWithData:_receivedData options:kNilOptions error:&error];
 
-	if (_statuscode == 200) {
+	if (_statuscode >= 200 && _statuscode < 300) {
 		id<ObjectMapProtocol> objectMap = [[ObjectMapperFactory sharedInstance] getMapperForClass:_targetClass];
 		if (self.delegate != nil && objectMap != nil && obj != nil) {
 			[self.delegate dataReceived:[objectMap mapObject:obj]];
