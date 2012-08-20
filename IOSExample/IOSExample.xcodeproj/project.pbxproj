@@ -37,6 +37,10 @@
 		DDEEE54015E1AE4C00DFA037 /* ObjectMapperFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE52E15E1AE4C00DFA037 /* ObjectMapperFactory.m */; };
 		DDEEE54115E1AE4C00DFA037 /* PollMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE53115E1AE4C00DFA037 /* PollMap.m */; };
 		DDEEE54215E1AE4C00DFA037 /* QuestionMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE53315E1AE4C00DFA037 /* QuestionMap.m */; };
+		DDEEE54515E234A600DFA037 /* AuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE54415E234A600DFA037 /* AuthenticationProvider.m */; };
+		DDEEE54915E2622D00DFA037 /* SqliteCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE54815E2622D00DFA037 /* SqliteCredentialStore.m */; };
+		DDEEE54B15E2646900DFA037 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEEE54A15E2646900DFA037 /* libsqlite3.dylib */; };
+		DDEEE54E15E2B11400DFA037 /* ApiAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE54D15E2B11400DFA037 /* ApiAuthentication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +102,14 @@
 		DDEEE53115E1AE4C00DFA037 /* PollMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollMap.m; sourceTree = "<group>"; };
 		DDEEE53215E1AE4C00DFA037 /* QuestionMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMap.h; sourceTree = "<group>"; };
 		DDEEE53315E1AE4C00DFA037 /* QuestionMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMap.m; sourceTree = "<group>"; };
+		DDEEE54315E234A600DFA037 /* AuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationProvider.h; sourceTree = "<group>"; };
+		DDEEE54415E234A600DFA037 /* AuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationProvider.m; sourceTree = "<group>"; };
+		DDEEE54615E258D100DFA037 /* CredentialStorageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CredentialStorageProtocol.h; sourceTree = "<group>"; };
+		DDEEE54715E2622D00DFA037 /* SqliteCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteCredentialStore.h; sourceTree = "<group>"; };
+		DDEEE54815E2622D00DFA037 /* SqliteCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteCredentialStore.m; sourceTree = "<group>"; };
+		DDEEE54A15E2646900DFA037 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DDEEE54C15E2B11400DFA037 /* ApiAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAuthentication.h; sourceTree = "<group>"; };
+		DDEEE54D15E2B11400DFA037 /* ApiAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAuthentication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDEEE54B15E2646900DFA037 /* libsqlite3.dylib in Frameworks */,
 				DDC1F77D15DD4EDD0029079D /* UIKit.framework in Frameworks */,
 				DDC1F77F15DD4EDD0029079D /* Foundation.framework in Frameworks */,
 				DDC1F78115DD4EDD0029079D /* CoreGraphics.framework in Frameworks */,
@@ -117,6 +130,7 @@
 		DDC1F76D15DD4EDD0029079D = {
 			isa = PBXGroup;
 			children = (
+				DDEEE54A15E2646900DFA037 /* libsqlite3.dylib */,
 				DDC1F78215DD4EDD0029079D /* IOSExample */,
 				DDC1F77B15DD4EDD0029079D /* Frameworks */,
 				DDC1F77915DD4EDD0029079D /* Products */,
@@ -217,6 +231,13 @@
 			isa = PBXGroup;
 			children = (
 				DDEEE51615E1AE4C00DFA037 /* AuthenticationProtocol.h */,
+				DDEEE54315E234A600DFA037 /* AuthenticationProvider.h */,
+				DDEEE54415E234A600DFA037 /* AuthenticationProvider.m */,
+				DDEEE54615E258D100DFA037 /* CredentialStorageProtocol.h */,
+				DDEEE54715E2622D00DFA037 /* SqliteCredentialStore.h */,
+				DDEEE54815E2622D00DFA037 /* SqliteCredentialStore.m */,
+				DDEEE54C15E2B11400DFA037 /* ApiAuthentication.h */,
+				DDEEE54D15E2B11400DFA037 /* ApiAuthentication.m */,
 			);
 			path = authentication;
 			sourceTree = "<group>";
@@ -362,6 +383,9 @@
 				DDEEE54015E1AE4C00DFA037 /* ObjectMapperFactory.m in Sources */,
 				DDEEE54115E1AE4C00DFA037 /* PollMap.m in Sources */,
 				DDEEE54215E1AE4C00DFA037 /* QuestionMap.m in Sources */,
+				DDEEE54515E234A600DFA037 /* AuthenticationProvider.m in Sources */,
+				DDEEE54915E2622D00DFA037 /* SqliteCredentialStore.m in Sources */,
+				DDEEE54E15E2B11400DFA037 /* ApiAuthentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

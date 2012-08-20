@@ -12,7 +12,7 @@
 @interface CreatePollViewController : TableViewControllerWithLoader <ApiCommandDelegate> {
 	PollCommand *pollCommand;
 }
-//@property (nonatomic, retain) PollCommand *pollCommand;
+
 @property (retain, nonatomic) IBOutlet UITextField *pollTitle;
 
 - (IBAction)createPoll:(id)sender;

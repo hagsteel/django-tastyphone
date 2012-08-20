@@ -8,26 +8,16 @@
 
 #import "CreatePollViewController.h"
 
-@interface CreatePollViewController ()
-
-@end
-
 @implementation CreatePollViewController
 
-//@synthesize pollCommand;
 @synthesize pollTitle;
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (IBAction)createPoll:(id)sender {
 	if (pollCommand == nil) {
 		pollCommand = [[PollCommand alloc] init];
 		pollCommand.delegate = self;
 	}
-	// Do any additional setup after loading the view.
-}
 
-- (IBAction)createPoll:(id)sender {
 	Poll *p = [[Poll alloc] init];
 	p.title = self.pollTitle.text;
 	[pollCommand createPoll:p];

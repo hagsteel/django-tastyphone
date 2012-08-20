@@ -151,6 +151,12 @@
 - (NSMutableURLRequest*)createRequest:(NSURL *)url {
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30] autorelease];
 
+	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getAuthenticator];
+	NSDictionary *authHeaders = [auth getAuthenticationHeaders];
+	for (NSString *key in [authHeaders allKeys]) {
+		[request addValue:[authHeaders objectForKey:key] forHTTPHeaderField:key];
+	}
+	
 //	NSString *token = [DPSettingsHelper getApiKey];
 //	if (token)
 //		[request addValue:token forHTTPHeaderField:@"api_key"];

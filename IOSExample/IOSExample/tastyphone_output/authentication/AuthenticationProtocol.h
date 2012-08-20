@@ -7,5 +7,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol AuthenticationProtocol <NSObject>
-- (void)
+- (NSDictionary *)getAuthenticationHeaders;
 @end

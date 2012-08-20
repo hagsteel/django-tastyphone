@@ -13,12 +13,6 @@
 @synthesize pollId;
 @synthesize questionName;
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
 - (IBAction)createQuestion:(id)sender {
 	if (_questionCommand == nil) {
 		_questionCommand = [[QuestionCommand alloc] init];

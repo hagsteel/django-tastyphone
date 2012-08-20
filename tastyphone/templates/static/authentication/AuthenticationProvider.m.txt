@@ -1,0 +1,29 @@
+{% include "class_heading.txt" %}
+
+#import "AuthenticationProvider.h"
+
+//////////////////////////////////
+// Shared Instance
+
+static AuthenticationProvider* sharedAuthenticationProvider = nil;
+
+///////////////////////////////////
+
+@implementation AuthenticationProvider
+
+- (id)init {
+	self = [super init];
+	if (self) {
+
+	}
+	return self;
+}
+
++ (AuthenticationProvider*)sharedInstance {
+	if (sharedAuthenticationProvider == nil)
+		sharedAuthenticationProvider = [[AuthenticationProvider alloc] init];
+
+	return sharedAuthenticationProvider;
+}
+
+@end

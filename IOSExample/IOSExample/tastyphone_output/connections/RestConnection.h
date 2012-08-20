@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "ApiError.h"
 #import "ObjectMapperFactory.h"
+#import "AuthenticationProvider.h"
 
 #define kHostname @"127.0.0.1"
 #define kApiRootUrl @"http://127.0.0.1:8000"
