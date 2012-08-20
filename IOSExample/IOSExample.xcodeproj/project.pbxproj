@@ -41,6 +41,7 @@
 		DDEEE54915E2622D00DFA037 /* SqliteCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE54815E2622D00DFA037 /* SqliteCredentialStore.m */; };
 		DDEEE54B15E2646900DFA037 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEEE54A15E2646900DFA037 /* libsqlite3.dylib */; };
 		DDEEE54E15E2B11400DFA037 /* ApiAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE54D15E2B11400DFA037 /* ApiAuthentication.m */; };
+		DDEEE55115E2C0A600DFA037 /* BasicAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE55015E2C0A600DFA037 /* BasicAuthentication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,8 @@
 		DDEEE54A15E2646900DFA037 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		DDEEE54C15E2B11400DFA037 /* ApiAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAuthentication.h; sourceTree = "<group>"; };
 		DDEEE54D15E2B11400DFA037 /* ApiAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAuthentication.m; sourceTree = "<group>"; };
+		DDEEE54F15E2C0A600DFA037 /* BasicAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAuthentication.h; sourceTree = "<group>"; };
+		DDEEE55015E2C0A600DFA037 /* BasicAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAuthentication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +241,8 @@
 				DDEEE54815E2622D00DFA037 /* SqliteCredentialStore.m */,
 				DDEEE54C15E2B11400DFA037 /* ApiAuthentication.h */,
 				DDEEE54D15E2B11400DFA037 /* ApiAuthentication.m */,
+				DDEEE54F15E2C0A600DFA037 /* BasicAuthentication.h */,
+				DDEEE55015E2C0A600DFA037 /* BasicAuthentication.m */,
 			);
 			path = authentication;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				DDEEE54515E234A600DFA037 /* AuthenticationProvider.m in Sources */,
 				DDEEE54915E2622D00DFA037 /* SqliteCredentialStore.m in Sources */,
 				DDEEE54E15E2B11400DFA037 /* ApiAuthentication.m in Sources */,
+				DDEEE55115E2C0A600DFA037 /* BasicAuthentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

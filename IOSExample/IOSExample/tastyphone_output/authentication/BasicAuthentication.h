@@ -1,5 +1,5 @@
 //
-//  ApiAuthentication.h
+//  BasicAuthentication.h
 //  IOSExample
 //
 //  Created by Jonas Hagstedt on 20/08/2012.
@@ -10,9 +10,10 @@
 #import "AuthenticationProtocol.h"
 #import "CredentialStorageProtocol.h"
 
-@interface ApiAuthentication : NSObject <AuthenticationProtocol> {
+@interface BasicAuthentication : NSObject <AuthenticationProtocol> {
 	id<CredentialStorageProtocol> _storage;
 }
+
 - (id)initWithCredentialStore:(id<CredentialStorageProtocol>)storage;
-- (void)saveCredentials:(NSString*)username withApiKey:(NSString*)apiKey;
+
 @end

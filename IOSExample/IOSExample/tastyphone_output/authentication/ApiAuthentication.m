@@ -9,6 +9,7 @@
 #import "ApiAuthentication.h"
 
 @implementation ApiAuthentication
+
 - (id)initWithCredentialStore:(id<CredentialStorageProtocol>)storage {
 	self = [super init];
 	if (self) {
@@ -24,5 +25,11 @@
 
 - (NSDictionary *)getAuthenticationHeaders {
 	return [_storage getCredentials];
+}
+
+- (void)saveCredentials:(NSString*)username withApiKey:(NSString*)apiKey {
+	NSDictionary *credentials = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:username, apiKey, nil]
+															forKeys:[NSArray arrayWithObjects:@"key", @"value", nil]];
+	[_storage saveCredentials:credentials];
 }
 @end

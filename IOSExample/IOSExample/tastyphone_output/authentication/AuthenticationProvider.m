@@ -20,7 +20,7 @@ static AuthenticationProvider* sharedAuthenticationProvider = nil;
 - (id)init {
 	self = [super init];
 	if (self) {
-		
+		_credentialStore = [[SqliteCredentialStore alloc] init];
 	}
 	return self;
 }
@@ -32,9 +32,14 @@ static AuthenticationProvider* sharedAuthenticationProvider = nil;
 	return sharedAuthenticationProvider;
 }
 
-- (id<AuthenticationProtocol>)getAuthenticator {
-	[NSException raise:@"not implemented yet" format:@"not implemented yet"];
-	return nil;
+- (id<AuthenticationProtocol>)getApiAuthentication {
+	ApiAuthentication *apiAuth = [[[ApiAuthentication alloc] initWithCredentialStore:_credentialStore] autorelease];
+	return apiAuth;
+}
+
+- (id<AuthenticationProtocol>)getBasicAuthentication {
+	BasicAuthentication *basicAuth = [[[BasicAuthentication alloc] initWithCredentialStore:_credentialStore] autorelease];
+	return basicAuth;
 }
 
 @end

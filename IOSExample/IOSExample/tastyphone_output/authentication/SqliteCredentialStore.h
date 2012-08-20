@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "CredentialStorageProtocol.h"
 
-@interface SqliteCredentialStore : NSObject
+@interface SqliteCredentialStore : NSObject <CredentialStorageProtocol>
 
 @end

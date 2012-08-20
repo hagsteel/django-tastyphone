@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AuthenticationProtocol.h"
-#import "CredentialStorageProtocol.h"
+#import "ApiAuthentication.h"
+#import "BasicAuthentication.h"
+#import "SqliteCredentialStore.h"
 
 @interface AuthenticationProvider : NSObject {
-	
+	id<CredentialStorageProtocol> _credentialStore;
 }
 
 + (AuthenticationProvider*)sharedInstance;
-- (id<AuthenticationProtocol>)getAuthenticator;
+- (id<AuthenticationProtocol>)getApiAuthentication;
+- (id<AuthenticationProtocol>)getBasicAuthentication;
 @end
