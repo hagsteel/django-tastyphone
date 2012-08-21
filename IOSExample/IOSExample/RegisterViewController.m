@@ -45,6 +45,9 @@
 
 - (void)apiErrorReceived:(ApiError *)error {
 	NSLog(@"oops");
+	UIAlertView *alerto = [[UIAlertView alloc] initWithTitle:@"failed to register" message:[error getSummary] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+	[alerto show];
+	[alerto release];
 }
 
 - (void)dealloc {

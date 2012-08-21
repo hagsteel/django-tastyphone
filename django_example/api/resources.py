@@ -1,9 +1,11 @@
 from django.conf.urls import url
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.db.utils import IntegrityError
 from tastypie import fields
 from tastypie.authentication import BasicAuthentication, ApiKeyAuthentication
 from tastypie.authorization import Authorization
+from tastypie.exceptions import BadRequest
 from tastypie.resources import ModelResource
 from tastypie.utils.urls import trailing_slash
 from tastypie.validation import FormValidation
@@ -40,17 +42,27 @@ class RegistrationResource(ModelResource):
         allowed_methods = ['post']
         always_return_data = True
         authorization = Authorization()
-        form = FormValidation(form_class=RegistrationForm)
+        validation = FormValidation(form_class=RegistrationForm)
 
         filtering = {
             'username': ('exact'),
             'password': ('exact'),
         }
-        fields = ('username', 'id', 'api_key','password')
+        fields = ('username', 'id', 'api_key', 'password')
 
     def dehydrate(self, bundle):
         bundle.data['api_key'] = bundle.obj.api_key.key
         return bundle
+
+    def obj_create(self, bundle, request=None, **kwargs):
+        try:
+            bundle = super(RegistrationResource, self).obj_create(bundle, request, **kwargs)
+            bundle.obj.set_password(bundle.data.get('password'))
+            bundle.obj.save()
+        except IntegrityError:
+            raise BadRequest('That username already exists')
+        return bundle
+
 
 #class UserResource(ModelResource):
 #    class Meta:

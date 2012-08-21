@@ -133,7 +133,7 @@
 		} else {
 			ApiError *apiError = [[ApiError alloc] init];
 			if ([obj isKindOfClass:[NSDictionary class]]) {
-				apiError.message = [obj objectForKey:@"error"];
+				apiError.messages = (NSDictionary*)obj;
 			}
 			if (self.delegate != nil)
 				[self.delegate apiErrorReceived:apiError];

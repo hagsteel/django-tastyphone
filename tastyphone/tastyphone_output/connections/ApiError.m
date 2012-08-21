@@ -6,12 +6,23 @@
 
 #import "ApiError.h"
 
+
 @implementation ApiError
 
-@synthesize message;
+@synthesize messages;
+
+- (NSString *)getSummary {
+	NSMutableString *summary = [[[NSMutableString alloc] init] autorelease];
+	for (NSString *k in self.messages.allKeys) {
+		for (NSString *msg in [self.messages objectForKey:k]) {
+			[summary appendFormat:@"%@\n", msg];
+		}
+	}
+	return summary;
+}
 
 - (void)dealloc {
-	[message release];
+	[messages release];
 	[super dealloc];
 }
 
