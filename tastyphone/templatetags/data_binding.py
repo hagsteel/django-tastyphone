@@ -59,6 +59,7 @@ def to_nsstring(field, prefix=None):
     if field['type'] == 'NSDate':
         return mark_safe('[NSString stringWithFormat:@"%%@", [NSDate stringFromDate:%s%s]]' % (prefix, field['field_name']))
 
+    import ipdb; ipdb.set_trace()
     return 'MISSING'
 
 

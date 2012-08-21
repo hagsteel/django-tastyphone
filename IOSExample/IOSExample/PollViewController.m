@@ -66,10 +66,8 @@
 	[self hideLoader];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	if ([segue.identifier isEqualToString:@"view qestions"])
-	{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"view qestions"]) {
 		QuestionViewController *questionViewController = segue.destinationViewController;
 		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
 		Poll* p = [_polls objectAtIndex:selectedIndexPath.row];

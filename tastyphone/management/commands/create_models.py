@@ -34,9 +34,6 @@ class Command(BaseCommand):
         api_key = options.get('api_key')
 
         print 'Processing models'
-        print 'hacking in some user credentials, remove these'
-        username = 'test1'
-        api_key = 'd769efc32fca6a742bcae9f7eaffc5f7b389e728'
 
         models = list()
         for k in api_schema:
@@ -47,13 +44,18 @@ class Command(BaseCommand):
             r = Client().get(schema_url)
 
             try:
-                schema = simplejson.loads(r.content)
-                model = Model(k, schema, endpoint)
-                models.append(model)
-
-#                model_classes = self.class_renderer.render_models(schema, model_name)
-#                self.file_manager.write_file_to_disk(self.file_manager.get_models_dir(), model_name + '.m', model_classes['class'])
-#                self.file_manager.write_file_to_disk(self.file_manager.get_models_dir(), model_name + '.h', model_classes['header'])
+                if r.status_code == 401:
+                    print ''
+                    print '-------------------'
+                    print 'WARNING!! Could not create models from %s' % endpoint
+                    print 'supply user credentials using a username and a password or api key'
+                    print '-u <username> -p <password> or -k <api key>'
+                    print '-------------------'
+                    print ''
+                else:
+                    schema = simplejson.loads(r.content)
+                    model = Model(k, schema, endpoint)
+                    models.append(model)
 
             except Exception as e:
                 print e

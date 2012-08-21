@@ -1,6 +1,42 @@
 [
   {
     "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "jonas", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2012-08-21T13:02:28.150Z", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "pbkdf2_sha256$10000$Nq33E0NwwsDV$a5AwhkyZcAEdlnsB9XZDlwH4BjkM5IqWZXyQja3aYUQ=", 
+      "email": "test@test.tes", 
+      "date_joined": "2012-08-21T12:53:02.871Z"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "test", 
+      "first_name": "tester", 
+      "last_name": "testington", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2012-08-21T13:08:48Z", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "pbkdf2_sha256$10000$TW91XoYCfLhi$qkvswRxwdzR+7LoW0Haawa2AoHLzR3CIociolK4IXb8=", 
+      "email": "test1@test.tes", 
+      "date_joined": "2012-08-21T13:08:48Z"
+    }
+  }, 
+  {
+    "pk": 1, 
     "model": "django_example.poll", 
     "fields": {
       "title": "A fancy poll"
