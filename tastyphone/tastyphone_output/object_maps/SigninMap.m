@@ -31,9 +31,9 @@
 - (id)mapInstance:(id)data {
 	Signin *instance = [[[Signin alloc] init] autorelease];
 	instance.username = [data objectForKey:@"username"];
+	instance.signinId = [data objectForKey:@"id"];
 	instance.email = [data objectForKey:@"email"];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
-	instance.signinId = [[data objectForKey:@"id"] intValue];
 	return instance;
 }
 

@@ -55,7 +55,7 @@ static NSString* databaseName = @"credentials.sqlite";
 	sqlite3 *database;
 	sqlite3_open([[self getDatabasePath] UTF8String], &database);
 	
-	NSString *statement = @"SELECT * FROM credentials";
+	NSString *statement = @"";
 	sqlite3_stmt *selectStatement;
 	sqlite3_prepare_v2(database, [statement UTF8String], -1, &selectStatement, nil);
 	

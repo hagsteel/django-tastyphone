@@ -152,9 +152,7 @@
 {
 	NSMutableString *rawUri = [[NSMutableString alloc]initWithFormat:@"%@%@", kApiRootUrl, actionUrl];
 	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
-	NSDictionary *authHeaders = [auth getAuthenticationHeaders];
-	[rawUri appendFormat:@"?username=%@", [authHeaders objectForKey:@"key"]];
-	[rawUri appendFormat:@"&api_key=%@", [authHeaders objectForKey:@"value"]];
+	
 	NSURL *url = [[[NSURL alloc] initWithString:rawUri] autorelease];
 	[rawUri release];
 	return url;

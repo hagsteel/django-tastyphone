@@ -7,8 +7,9 @@ from django.utils.datetime_safe import datetime
 
 class ClassRenderer(object):
 
-    def __init__(self, company_name=None):
+    def __init__(self, company_name=None, authentication=None):
         self.company_name = company_name
+        self.authentication = authentication
         self.file_manager = FileManager()
         pass
 
@@ -103,7 +104,7 @@ class ClassRenderer(object):
                 self.render_static_files(os.path.join(parent, f))
 
     def render_static_file(self, path, file):
-        context = Context()
+        context = Context({'authentications': self.authentication})
         context = self.add_default_context(context)
         template = get_template(os.path.join(path, file))
         data = template.render(context)

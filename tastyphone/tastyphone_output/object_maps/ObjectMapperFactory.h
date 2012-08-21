@@ -9,7 +9,6 @@
 
 #import "RegistrationMap.h"
 #import "SigninMap.h"
-#import "PollMap.h"
 #import "QuestionMap.h"
 #import "ChoiceMap.h"
 

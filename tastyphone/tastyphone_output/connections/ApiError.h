@@ -9,7 +9,5 @@
 @interface ApiError : NSObject
 
 @property (nonatomic, retain) NSDictionary *messages;
-
 - (NSString *)getSummary;
-
 @end

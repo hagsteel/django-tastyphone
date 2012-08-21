@@ -16,16 +16,19 @@ class Command(BaseCommand):
                 help='Set the api username'),
             make_option('--apikey', '-k', dest='api_key',
                 help='Set the api key'),
+            make_option('--auth', '-a', dest='authentication',
+                help='Set the tastypie authentication to use. Currently supported are: api and basic'),
             make_option('--company', '-c', dest='company_name',
                 help='Set the company name, otherwise the copyright will be missing from the class headings'),
         )
 
     def __init__(self):
         super(Command, self).__init__()
-        self.class_renderer = ClassRenderer()
         self.file_manager = FileManager()
 
     def handle(self, *args, **options):
+        self.class_renderer = ClassRenderer(company_name=options.get('company_name'), authentication=options.get('authentications'))
+
         response = Client().get('/api/v1/?format=json')
         api_schema = simplejson.loads(response.content)
         print 'Schema loaded...'
@@ -67,8 +70,4 @@ class Command(BaseCommand):
             self.class_renderer.render_api_command(m)
 
         self.class_renderer.render_object_map_factory(models)
-#        self.class_renderer.render_helpers()
         self.class_renderer.render_static_files()
-
-#
-#        maps = self.class_renderer.render_object_maps()

@@ -25,12 +25,12 @@
 }
 
 - (NSDictionary*)dictionaryFromModel:(Signin*)aSignin {
-        NSArray *keys = [NSArray arrayWithObjects:@"username", @"email", @"id", nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"username", @"id", @"email", nil];
         NSArray *values = [NSArray arrayWithObjects:
         aSignin.username,
+        aSignin.signinId,
         aSignin.email,
-        [NSString stringWithFormat:@"%d", aSignin.signinId],
-            nil];
+        nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;
 }

@@ -23,14 +23,12 @@ static ObjectMapperFactory* sharedObjectMapper = nil;
 		NSArray *values = [NSArray arrayWithObjects:
                            [[[RegistrationMap alloc] init] autorelease],
                            [[[SigninMap alloc] init] autorelease],
-                           [[[PollMap alloc] init] autorelease],
                            [[[QuestionMap alloc] init] autorelease],
                            [[[ChoiceMap alloc] init] autorelease], nil];
 
 		NSArray *keys = [NSArray arrayWithObjects:
                          [Registration class],
                          [Signin class],
-                         [Poll class],
                          [Question class],
                          [Choice class], nil];
 
