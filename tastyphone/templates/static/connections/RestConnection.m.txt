@@ -147,8 +147,8 @@
 - (NSURL *)getUrl:(NSString *)actionUrl
 {
 	NSMutableString *rawUri = [[NSMutableString alloc]initWithFormat:@"%@%@", kApiRootUrl, actionUrl];
+	{% if 'api' in authentication %}
 	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
-	{% if authentication.api %}
 	NSDictionary *authHeaders = [auth getAuthenticationHeaders];
 	[rawUri appendFormat:@"?username=%@", [authHeaders objectForKey:@"key"]];
 	[rawUri appendFormat:@"&api_key=%@", [authHeaders objectForKey:@"value"]];

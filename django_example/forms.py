@@ -9,7 +9,7 @@ class RegistrationForm(forms.Form):
     def is_valid(self):
         if User.objects.filter(username=self.data['username']).count():
             if 'username' in self._errors:
-                self._errors.update('username','there is already a user with this name')
+                self._errors.update('username', 'there is already a user with this name')
             else:
                 self._errors['username'] = 'there is already a user with this name'
         if self.data['password'] is None:

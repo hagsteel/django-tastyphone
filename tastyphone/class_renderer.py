@@ -104,7 +104,7 @@ class ClassRenderer(object):
                 self.render_static_files(os.path.join(parent, f))
 
     def render_static_file(self, path, file):
-        context = Context({'authentications': self.authentication})
+        context = Context({'authentication': self.authentication})
         context = self.add_default_context(context)
         template = get_template(os.path.join(path, file))
         data = template.render(context)

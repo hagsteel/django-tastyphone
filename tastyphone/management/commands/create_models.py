@@ -27,8 +27,7 @@ class Command(BaseCommand):
         self.file_manager = FileManager()
 
     def handle(self, *args, **options):
-        self.class_renderer = ClassRenderer(company_name=options.get('company_name'), authentication=options.get('authentications'))
-
+        self.class_renderer = ClassRenderer(company_name=options.get('company_name'), authentication=options.get('authentication'))
         response = Client().get('/api/v1/?format=json')
         api_schema = simplejson.loads(response.content)
         print 'Schema loaded...'
