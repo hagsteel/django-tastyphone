@@ -40,7 +40,9 @@
 #pragma mark - registration command delegate
 
 - (void)dataReceived:(id)object {
-	NSLog(@"api key: %@", ((Registration*)object).apiKey);
+	ApiAuthentication *apiAuth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
+	[apiAuth saveCredentials:((Registration*)object).username withApiKey:((Registration*)object).apiKey];
+	[self.view endEditing:YES];
 }
 
 - (void)apiErrorReceived:(ApiError *)error {
@@ -48,6 +50,7 @@
 	UIAlertView *alerto = [[UIAlertView alloc] initWithTitle:@"failed to register" message:[error getSummary] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
 	[alerto show];
 	[alerto release];
+	[self.view endEditing:YES];
 }
 
 - (void)dealloc {

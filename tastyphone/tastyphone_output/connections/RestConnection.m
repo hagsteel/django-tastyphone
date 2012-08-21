@@ -130,6 +130,7 @@
 		}
 	} else {
 		if (_statuscode == 401) { // auth required
+			NSLog(@"auth required");
 		} else {
 			ApiError *apiError = [[ApiError alloc] init];
 			if ([obj isKindOfClass:[NSDictionary class]]) {
@@ -149,7 +150,11 @@
 
 - (NSURL *)getUrl:(NSString *)actionUrl
 {
-	NSString *rawUri = [[NSString alloc]initWithFormat:@"%@%@", kApiRootUrl, actionUrl];
+	NSMutableString *rawUri = [[NSMutableString alloc]initWithFormat:@"%@%@", kApiRootUrl, actionUrl];
+	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
+	NSDictionary *authHeaders = [auth getAuthenticationHeaders];
+	[rawUri appendFormat:@"?username=%@", [authHeaders objectForKey:@"key"]];
+	[rawUri appendFormat:@"&api_key=%@", [authHeaders objectForKey:@"value"]];
 	NSURL *url = [[[NSURL alloc] initWithString:rawUri] autorelease];
 	[rawUri release];
 	return url;
@@ -157,13 +162,6 @@
 
 - (NSMutableURLRequest*)createRequest:(NSURL *)url {
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30] autorelease];
-
-	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
-	NSDictionary *authHeaders = [auth getAuthenticationHeaders];
-	for (NSString *key in [authHeaders allKeys]) {
-		[request addValue:[authHeaders objectForKey:key] forHTTPHeaderField:key];
-	}
-
 	return request;
 }
 

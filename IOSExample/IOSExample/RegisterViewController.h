@@ -8,6 +8,7 @@
 
 #import "TableViewControllerWithLoader.h"
 #import "RegistrationCommand.h"
+#import "AuthenticationProvider.h"
 
 @interface RegisterViewController : TableViewControllerWithLoader <ApiCommandDelegate> {
 	RegistrationCommand *_registrationCommand;
