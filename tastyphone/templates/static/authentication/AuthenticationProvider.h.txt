@@ -1,7 +1,15 @@
 {% include "class_heading.txt" %}
 
 #import <Foundation/Foundation.h>
+#import "ApiAuthentication.h"
+#import "BasicAuthentication.h"
+#import "SqliteCredentialStore.h"
 
-@interface AuthenticationProvider : NSObject
+@interface AuthenticationProvider : NSObject {
+	id<CredentialStorageProtocol> _credentialStore;
+}
+
 + (AuthenticationProvider*)sharedInstance;
+- (id<AuthenticationProtocol>)getApiAuthentication;
+- (id<AuthenticationProtocol>)getBasicAuthentication;
 @end

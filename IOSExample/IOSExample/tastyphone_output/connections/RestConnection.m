@@ -103,6 +103,15 @@
 	_statuscode = [(NSHTTPURLResponse *)response statusCode];
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getBasicAuthentication];
+	NSDictionary *credentials = [auth getAuthenticationHeaders];
+	NSURLCredential *newCredential = [NSURLCredential credentialWithUser:[credentials objectForKey:@"key"]
+																password:[credentials objectForKey:@"value"]
+															 persistence:NSURLCredentialPersistenceForSession];
+	[[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
+}
+
 // Request complete and connection done loading
 - (void)connectionDidFinishLoading:(NSURLConnection *)aConnection
 {
@@ -121,8 +130,6 @@
 		}
 	} else {
 		if (_statuscode == 401) { // auth required
-//			if ([DPSettingsHelper isAuthenticatedUser] == YES)
-//				[DPSettingsHelper removeUserDetails];
 		} else {
 			ApiError *apiError = [[ApiError alloc] init];
 			if ([obj isKindOfClass:[NSDictionary class]]) {
@@ -157,10 +164,6 @@
 		[request addValue:[authHeaders objectForKey:key] forHTTPHeaderField:key];
 	}
 	
-//	NSString *token = [DPSettingsHelper getApiKey];
-//	if (token)
-//		[request addValue:token forHTTPHeaderField:@"api_key"];
-
 	return request;
 }
 

@@ -99,6 +99,15 @@
 	_statuscode = [(NSHTTPURLResponse *)response statusCode];
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getBasicAuthentication];
+	NSDictionary *credentials = [auth getAuthenticationHeaders];
+	NSURLCredential *newCredential = [NSURLCredential credentialWithUser:[credentials objectForKey:@"key"]
+																password:[credentials objectForKey:@"value"]
+															 persistence:NSURLCredentialPersistenceForSession];
+	[[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
+}
+
 // Request complete and connection done loading
 - (void)connectionDidFinishLoading:(NSURLConnection *)aConnection
 {
@@ -117,8 +126,6 @@
 		}
 	} else {
 		if (_statuscode == 401) { // auth required
-//			if ([DPSettingsHelper isAuthenticatedUser] == YES)
-//				[DPSettingsHelper removeUserDetails];
 		} else {
 			ApiError *apiError = [[ApiError alloc] init];
 			if ([obj isKindOfClass:[NSDictionary class]]) {
@@ -147,9 +154,11 @@
 - (NSMutableURLRequest*)createRequest:(NSURL *)url {
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30] autorelease];
 
-//	NSString *token = [DPSettingsHelper getApiKey];
-//	if (token)
-//		[request addValue:token forHTTPHeaderField:@"api_key"];
+	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
+	NSDictionary *authHeaders = [auth getAuthenticationHeaders];
+	for (NSString *key in [authHeaders allKeys]) {
+		[request addValue:[authHeaders objectForKey:key] forHTTPHeaderField:key];
+	}
 
 	return request;
 }

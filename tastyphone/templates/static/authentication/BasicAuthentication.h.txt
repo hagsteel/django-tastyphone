@@ -1,0 +1,13 @@
+{% include "class_heading.txt" %}
+
+#import <Foundation/Foundation.h>
+#import "AuthenticationProtocol.h"
+#import "CredentialStorageProtocol.h"
+
+@interface BasicAuthentication : NSObject <AuthenticationProtocol> {
+	id<CredentialStorageProtocol> _storage;
+}
+
+- (id)initWithCredentialStore:(id<CredentialStorageProtocol>)storage;
+
+@end
