@@ -9,8 +9,12 @@
 - (NSString *)getSummary {
 	NSMutableString *summary = [[[NSMutableString alloc] init] autorelease];
 	for (NSString *k in self.messages.allKeys) {
-		for (NSString *msg in [self.messages objectForKey:k]) {
-			[summary appendFormat:@"%@\n", msg];
+		if ([[self.messages objectForKey:k] isKindOfClass:[NSArray class]]) {
+			for (NSString *msg in [self.messages objectForKey:k]) {
+				[summary appendFormat:@"%@\n", msg];
+			}
+		} else {
+			[summary appendFormat:@"%@\n", [self.messages objectForKey:k]];
 		}
 	}
 	return summary;
