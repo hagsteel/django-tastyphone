@@ -1,42 +1,6 @@
 [
   {
     "pk": 1, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "jonas", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": true, 
-      "is_staff": true, 
-      "last_login": "2012-08-21T13:02:28.150Z", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "pbkdf2_sha256$10000$Nq33E0NwwsDV$a5AwhkyZcAEdlnsB9XZDlwH4BjkM5IqWZXyQja3aYUQ=", 
-      "email": "test@test.tes", 
-      "date_joined": "2012-08-21T12:53:02.871Z"
-    }
-  }, 
-  {
-    "pk": 2, 
-    "model": "auth.user", 
-    "fields": {
-      "username": "test", 
-      "first_name": "tester", 
-      "last_name": "testington", 
-      "is_active": true, 
-      "is_superuser": false, 
-      "is_staff": false, 
-      "last_login": "2012-08-21T13:08:48Z", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "pbkdf2_sha256$10000$TW91XoYCfLhi$qkvswRxwdzR+7LoW0Haawa2AoHLzR3CIociolK4IXb8=", 
-      "email": "test1@test.tes", 
-      "date_joined": "2012-08-21T13:08:48Z"
-    }
-  }, 
-  {
-    "pk": 1, 
     "model": "django_example.poll", 
     "fields": {
       "title": "A fancy poll"
@@ -96,6 +60,60 @@
       "date_created": "2012-08-16T16:21:46.395Z", 
       "question": 2, 
       "description": "No"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "jonas", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2012-08-22T12:17:57.844Z", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "pbkdf2_sha256$10000$iPXnjR49DQLJ$GSuE/3zPZkzalfVPWehyg96GbbdWCJYvM4WBVN7qi9E=", 
+      "email": "as@as.as", 
+      "date_joined": "2012-08-22T12:15:48.755Z"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "test1", 
+      "first_name": "tester", 
+      "last_name": "testington", 
+      "is_active": true, 
+      "is_superuser": false, 
+      "is_staff": false, 
+      "last_login": "2012-08-22T12:26:31Z", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "pbkdf2_sha256$10000$KEPS6FcC04wz$T2oIbenx7kM6K3UF4PQrZZBCooaKmVtxXEuLavQaGZY=", 
+      "email": "test1@test.tes", 
+      "date_joined": "2012-08-22T12:26:31Z"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "tastypie.apikey", 
+    "fields": {
+      "user": 1, 
+      "key": "13508f8ee85573f4ef697808c07301d18241372e", 
+      "created": "2012-08-22T12:15:48.885Z"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "tastypie.apikey", 
+    "fields": {
+      "user": 2, 
+      "key": "3576d4cc7d6fcf1a5c3eaca59ca9ca81cc748f74", 
+      "created": "2012-08-22T12:26:32.159Z"
     }
   }
 ]

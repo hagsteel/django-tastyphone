@@ -1,7 +1,7 @@
 //
 //  ObjectMapperFactory.m
 //
-//  Created by tastyphone on 21/8/2012.
+//  Created by tastyphone on 22/8/2012.
 //
 
 #import "ObjectMapperFactory.h"
@@ -23,12 +23,14 @@ static ObjectMapperFactory* sharedObjectMapper = nil;
 		NSArray *values = [NSArray arrayWithObjects:
                            [[[RegistrationMap alloc] init] autorelease],
                            [[[SigninMap alloc] init] autorelease],
+                           [[[PollMap alloc] init] autorelease],
                            [[[QuestionMap alloc] init] autorelease],
                            [[[ChoiceMap alloc] init] autorelease], nil];
 
 		NSArray *keys = [NSArray arrayWithObjects:
                          [Registration class],
                          [Signin class],
+                         [Poll class],
                          [Question class],
                          [Choice class], nil];
 

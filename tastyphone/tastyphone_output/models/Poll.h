@@ -1,5 +1,5 @@
 //
-//  Question.h
+//  Poll.h
 //
 //  Created by tastyphone on 22/8/2012.
 //
@@ -7,11 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Question : NSObject
+@interface Poll : NSObject
 
-@property (nonatomic, retain) NSString *question;
 @property (nonatomic, retain) NSString *resourceUri;
-@property (nonatomic, assign) NSInteger questionId;
+@property (nonatomic, retain) NSString *title;
 @property (nonatomic, assign) NSInteger pollId;
 
 

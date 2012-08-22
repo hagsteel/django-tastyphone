@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 21/8/2012.
+//  Created by tastyphone on 22/8/2012.
 //
 
 #import "ApiAuthentication.h"
@@ -26,6 +26,9 @@
 }
 
 - (void)saveCredentials:(NSString*)username withApiKey:(NSString*)apiKey {
+	if ([username length] > 0 && [apiKey length] > 0)
+		return;
+
 	NSDictionary *credentials = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:username, apiKey, nil]
 															forKeys:[NSArray arrayWithObjects:@"key", @"value", nil]];
 	[_storage saveCredentials:credentials];

@@ -24,6 +24,32 @@
 		DDEEE49915E1824200DFA037 /* CreateChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEEE49815E1824200DFA037 /* CreateChoiceViewController.m */; };
 		DDEEE54B15E2646900DFA037 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEEE54A15E2646900DFA037 /* libsqlite3.dylib */; };
 		DDF955F815E3C8760070F98F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF955F715E3C8760070F98F /* RegisterViewController.m */; };
+		DDF9585D15E5586D0070F98F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9585C15E5586D0070F98F /* SignInViewController.m */; };
+		DDF9589A15E55E3B0070F98F /* ChoiceCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9586115E55E3B0070F98F /* ChoiceCommand.m */; };
+		DDF9589B15E55E3B0070F98F /* PollCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9586315E55E3B0070F98F /* PollCommand.m */; };
+		DDF9589C15E55E3B0070F98F /* QuestionCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9586515E55E3B0070F98F /* QuestionCommand.m */; };
+		DDF9589D15E55E3B0070F98F /* RegistrationCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9586715E55E3B0070F98F /* RegistrationCommand.m */; };
+		DDF9589E15E55E3B0070F98F /* SigninCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9586915E55E3B0070F98F /* SigninCommand.m */; };
+		DDF9589F15E55E3B0070F98F /* ApiAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9586C15E55E3B0070F98F /* ApiAuthentication.m */; };
+		DDF958A015E55E3B0070F98F /* AuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9586F15E55E3B0070F98F /* AuthenticationProvider.m */; };
+		DDF958A115E55E3B0070F98F /* BasicAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9587115E55E3B0070F98F /* BasicAuthentication.m */; };
+		DDF958A215E55E3B0070F98F /* SqliteCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9587415E55E3B0070F98F /* SqliteCredentialStore.m */; };
+		DDF958A315E55E3B0070F98F /* ApiBaseCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9587715E55E3B0070F98F /* ApiBaseCommand.m */; };
+		DDF958A415E55E3B0070F98F /* ApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9587915E55E3B0070F98F /* ApiError.m */; };
+		DDF958A515E55E3B0070F98F /* RestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9587B15E55E3B0070F98F /* RestConnection.m */; };
+		DDF958A615E55E3B0070F98F /* NSDate+DateFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9587E15E55E3B0070F98F /* NSDate+DateFromString.m */; };
+		DDF958A715E55E3B0070F98F /* NSString+DateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9588015E55E3B0070F98F /* NSString+DateToString.m */; };
+		DDF958A815E55E3B0070F98F /* Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9588315E55E3B0070F98F /* Choice.m */; };
+		DDF958A915E55E3B0070F98F /* Poll.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9588515E55E3B0070F98F /* Poll.m */; };
+		DDF958AA15E55E3B0070F98F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9588715E55E3B0070F98F /* Question.m */; };
+		DDF958AB15E55E3B0070F98F /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9588915E55E3B0070F98F /* Registration.m */; };
+		DDF958AC15E55E3B0070F98F /* Signin.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9588B15E55E3B0070F98F /* Signin.m */; };
+		DDF958AD15E55E3B0070F98F /* ChoiceMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9588E15E55E3B0070F98F /* ChoiceMap.m */; };
+		DDF958AE15E55E3B0070F98F /* ObjectMapperFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9589015E55E3B0070F98F /* ObjectMapperFactory.m */; };
+		DDF958AF15E55E3B0070F98F /* PollMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9589315E55E3B0070F98F /* PollMap.m */; };
+		DDF958B015E55E3B0070F98F /* QuestionMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9589515E55E3B0070F98F /* QuestionMap.m */; };
+		DDF958B115E55E3B0070F98F /* RegistrationMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9589715E55E3B0070F98F /* RegistrationMap.m */; };
+		DDF958B215E55E3B0070F98F /* SigninMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF9589915E55E3B0070F98F /* SigninMap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +82,61 @@
 		DDEEE54A15E2646900DFA037 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		DDF955F615E3C8760070F98F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		DDF955F715E3C8760070F98F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		DDF9585B15E5586D0070F98F /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		DDF9585C15E5586D0070F98F /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		DDF9586015E55E3B0070F98F /* ChoiceCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceCommand.h; sourceTree = "<group>"; };
+		DDF9586115E55E3B0070F98F /* ChoiceCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceCommand.m; sourceTree = "<group>"; };
+		DDF9586215E55E3B0070F98F /* PollCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollCommand.h; sourceTree = "<group>"; };
+		DDF9586315E55E3B0070F98F /* PollCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollCommand.m; sourceTree = "<group>"; };
+		DDF9586415E55E3B0070F98F /* QuestionCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCommand.h; sourceTree = "<group>"; };
+		DDF9586515E55E3B0070F98F /* QuestionCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCommand.m; sourceTree = "<group>"; };
+		DDF9586615E55E3B0070F98F /* RegistrationCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationCommand.h; sourceTree = "<group>"; };
+		DDF9586715E55E3B0070F98F /* RegistrationCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationCommand.m; sourceTree = "<group>"; };
+		DDF9586815E55E3B0070F98F /* SigninCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninCommand.h; sourceTree = "<group>"; };
+		DDF9586915E55E3B0070F98F /* SigninCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninCommand.m; sourceTree = "<group>"; };
+		DDF9586B15E55E3B0070F98F /* ApiAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAuthentication.h; sourceTree = "<group>"; };
+		DDF9586C15E55E3B0070F98F /* ApiAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAuthentication.m; sourceTree = "<group>"; };
+		DDF9586D15E55E3B0070F98F /* AuthenticationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationProtocol.h; sourceTree = "<group>"; };
+		DDF9586E15E55E3B0070F98F /* AuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationProvider.h; sourceTree = "<group>"; };
+		DDF9586F15E55E3B0070F98F /* AuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationProvider.m; sourceTree = "<group>"; };
+		DDF9587015E55E3B0070F98F /* BasicAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAuthentication.h; sourceTree = "<group>"; };
+		DDF9587115E55E3B0070F98F /* BasicAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAuthentication.m; sourceTree = "<group>"; };
+		DDF9587215E55E3B0070F98F /* CredentialStorageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialStorageProtocol.h; sourceTree = "<group>"; };
+		DDF9587315E55E3B0070F98F /* SqliteCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteCredentialStore.h; sourceTree = "<group>"; };
+		DDF9587415E55E3B0070F98F /* SqliteCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteCredentialStore.m; sourceTree = "<group>"; };
+		DDF9587615E55E3B0070F98F /* ApiBaseCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiBaseCommand.h; sourceTree = "<group>"; };
+		DDF9587715E55E3B0070F98F /* ApiBaseCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiBaseCommand.m; sourceTree = "<group>"; };
+		DDF9587815E55E3B0070F98F /* ApiError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiError.h; sourceTree = "<group>"; };
+		DDF9587915E55E3B0070F98F /* ApiError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiError.m; sourceTree = "<group>"; };
+		DDF9587A15E55E3B0070F98F /* RestConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestConnection.h; sourceTree = "<group>"; };
+		DDF9587B15E55E3B0070F98F /* RestConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestConnection.m; sourceTree = "<group>"; };
+		DDF9587D15E55E3B0070F98F /* NSDate+DateFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFromString.h"; sourceTree = "<group>"; };
+		DDF9587E15E55E3B0070F98F /* NSDate+DateFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFromString.m"; sourceTree = "<group>"; };
+		DDF9587F15E55E3B0070F98F /* NSString+DateToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DateToString.h"; sourceTree = "<group>"; };
+		DDF9588015E55E3B0070F98F /* NSString+DateToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DateToString.m"; sourceTree = "<group>"; };
+		DDF9588215E55E3B0070F98F /* Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Choice.h; sourceTree = "<group>"; };
+		DDF9588315E55E3B0070F98F /* Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Choice.m; sourceTree = "<group>"; };
+		DDF9588415E55E3B0070F98F /* Poll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poll.h; sourceTree = "<group>"; };
+		DDF9588515E55E3B0070F98F /* Poll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Poll.m; sourceTree = "<group>"; };
+		DDF9588615E55E3B0070F98F /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		DDF9588715E55E3B0070F98F /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		DDF9588815E55E3B0070F98F /* Registration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registration.h; sourceTree = "<group>"; };
+		DDF9588915E55E3B0070F98F /* Registration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Registration.m; sourceTree = "<group>"; };
+		DDF9588A15E55E3B0070F98F /* Signin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signin.h; sourceTree = "<group>"; };
+		DDF9588B15E55E3B0070F98F /* Signin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signin.m; sourceTree = "<group>"; };
+		DDF9588D15E55E3B0070F98F /* ChoiceMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceMap.h; sourceTree = "<group>"; };
+		DDF9588E15E55E3B0070F98F /* ChoiceMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceMap.m; sourceTree = "<group>"; };
+		DDF9588F15E55E3B0070F98F /* ObjectMapperFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapperFactory.h; sourceTree = "<group>"; };
+		DDF9589015E55E3B0070F98F /* ObjectMapperFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectMapperFactory.m; sourceTree = "<group>"; };
+		DDF9589115E55E3B0070F98F /* ObjectMapProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectMapProtocol.h; sourceTree = "<group>"; };
+		DDF9589215E55E3B0070F98F /* PollMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollMap.h; sourceTree = "<group>"; };
+		DDF9589315E55E3B0070F98F /* PollMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollMap.m; sourceTree = "<group>"; };
+		DDF9589415E55E3B0070F98F /* QuestionMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMap.h; sourceTree = "<group>"; };
+		DDF9589515E55E3B0070F98F /* QuestionMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMap.m; sourceTree = "<group>"; };
+		DDF9589615E55E3B0070F98F /* RegistrationMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationMap.h; sourceTree = "<group>"; };
+		DDF9589715E55E3B0070F98F /* RegistrationMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationMap.m; sourceTree = "<group>"; };
+		DDF9589815E55E3B0070F98F /* SigninMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninMap.h; sourceTree = "<group>"; };
+		DDF9589915E55E3B0070F98F /* SigninMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninMap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +185,7 @@
 		DDC1F78215DD4EDD0029079D /* IOSExample */ = {
 			isa = PBXGroup;
 			children = (
+				DDF9585E15E55E3A0070F98F /* tastyphone_output */,
 				DDC1F7DA15DD50A60029079D /* Resources */,
 				DDC1F7D215DD4F840029079D /* TableViewControllerWithLoader.h */,
 				DDC1F7D315DD4F840029079D /* TableViewControllerWithLoader.m */,
@@ -124,6 +206,8 @@
 				DDEEE49815E1824200DFA037 /* CreateChoiceViewController.m */,
 				DDF955F615E3C8760070F98F /* RegisterViewController.h */,
 				DDF955F715E3C8760070F98F /* RegisterViewController.m */,
+				DDF9585B15E5586D0070F98F /* SignInViewController.h */,
+				DDF9585C15E5586D0070F98F /* SignInViewController.m */,
 				DDC1F78315DD4EDD0029079D /* Supporting Files */,
 			);
 			path = IOSExample;
@@ -146,6 +230,115 @@
 				DDC1F7D415DD4FB40029079D /* loader_background.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		DDF9585E15E55E3A0070F98F /* tastyphone_output */ = {
+			isa = PBXGroup;
+			children = (
+				DDF9585F15E55E3B0070F98F /* api_commands */,
+				DDF9586A15E55E3B0070F98F /* authentication */,
+				DDF9587515E55E3B0070F98F /* connections */,
+				DDF9587C15E55E3B0070F98F /* helpers */,
+				DDF9588115E55E3B0070F98F /* models */,
+				DDF9588C15E55E3B0070F98F /* object_maps */,
+			);
+			name = tastyphone_output;
+			path = ../../tastyphone/tastyphone_output;
+			sourceTree = "<group>";
+		};
+		DDF9585F15E55E3B0070F98F /* api_commands */ = {
+			isa = PBXGroup;
+			children = (
+				DDF9586015E55E3B0070F98F /* ChoiceCommand.h */,
+				DDF9586115E55E3B0070F98F /* ChoiceCommand.m */,
+				DDF9586215E55E3B0070F98F /* PollCommand.h */,
+				DDF9586315E55E3B0070F98F /* PollCommand.m */,
+				DDF9586415E55E3B0070F98F /* QuestionCommand.h */,
+				DDF9586515E55E3B0070F98F /* QuestionCommand.m */,
+				DDF9586615E55E3B0070F98F /* RegistrationCommand.h */,
+				DDF9586715E55E3B0070F98F /* RegistrationCommand.m */,
+				DDF9586815E55E3B0070F98F /* SigninCommand.h */,
+				DDF9586915E55E3B0070F98F /* SigninCommand.m */,
+			);
+			path = api_commands;
+			sourceTree = "<group>";
+		};
+		DDF9586A15E55E3B0070F98F /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DDF9586B15E55E3B0070F98F /* ApiAuthentication.h */,
+				DDF9586C15E55E3B0070F98F /* ApiAuthentication.m */,
+				DDF9586D15E55E3B0070F98F /* AuthenticationProtocol.h */,
+				DDF9586E15E55E3B0070F98F /* AuthenticationProvider.h */,
+				DDF9586F15E55E3B0070F98F /* AuthenticationProvider.m */,
+				DDF9587015E55E3B0070F98F /* BasicAuthentication.h */,
+				DDF9587115E55E3B0070F98F /* BasicAuthentication.m */,
+				DDF9587215E55E3B0070F98F /* CredentialStorageProtocol.h */,
+				DDF9587315E55E3B0070F98F /* SqliteCredentialStore.h */,
+				DDF9587415E55E3B0070F98F /* SqliteCredentialStore.m */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		DDF9587515E55E3B0070F98F /* connections */ = {
+			isa = PBXGroup;
+			children = (
+				DDF9587615E55E3B0070F98F /* ApiBaseCommand.h */,
+				DDF9587715E55E3B0070F98F /* ApiBaseCommand.m */,
+				DDF9587815E55E3B0070F98F /* ApiError.h */,
+				DDF9587915E55E3B0070F98F /* ApiError.m */,
+				DDF9587A15E55E3B0070F98F /* RestConnection.h */,
+				DDF9587B15E55E3B0070F98F /* RestConnection.m */,
+			);
+			path = connections;
+			sourceTree = "<group>";
+		};
+		DDF9587C15E55E3B0070F98F /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DDF9587D15E55E3B0070F98F /* NSDate+DateFromString.h */,
+				DDF9587E15E55E3B0070F98F /* NSDate+DateFromString.m */,
+				DDF9587F15E55E3B0070F98F /* NSString+DateToString.h */,
+				DDF9588015E55E3B0070F98F /* NSString+DateToString.m */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		DDF9588115E55E3B0070F98F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				DDF9588215E55E3B0070F98F /* Choice.h */,
+				DDF9588315E55E3B0070F98F /* Choice.m */,
+				DDF9588415E55E3B0070F98F /* Poll.h */,
+				DDF9588515E55E3B0070F98F /* Poll.m */,
+				DDF9588615E55E3B0070F98F /* Question.h */,
+				DDF9588715E55E3B0070F98F /* Question.m */,
+				DDF9588815E55E3B0070F98F /* Registration.h */,
+				DDF9588915E55E3B0070F98F /* Registration.m */,
+				DDF9588A15E55E3B0070F98F /* Signin.h */,
+				DDF9588B15E55E3B0070F98F /* Signin.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		DDF9588C15E55E3B0070F98F /* object_maps */ = {
+			isa = PBXGroup;
+			children = (
+				DDF9588D15E55E3B0070F98F /* ChoiceMap.h */,
+				DDF9588E15E55E3B0070F98F /* ChoiceMap.m */,
+				DDF9588F15E55E3B0070F98F /* ObjectMapperFactory.h */,
+				DDF9589015E55E3B0070F98F /* ObjectMapperFactory.m */,
+				DDF9589115E55E3B0070F98F /* ObjectMapProtocol.h */,
+				DDF9589215E55E3B0070F98F /* PollMap.h */,
+				DDF9589315E55E3B0070F98F /* PollMap.m */,
+				DDF9589415E55E3B0070F98F /* QuestionMap.h */,
+				DDF9589515E55E3B0070F98F /* QuestionMap.m */,
+				DDF9589615E55E3B0070F98F /* RegistrationMap.h */,
+				DDF9589715E55E3B0070F98F /* RegistrationMap.m */,
+				DDF9589815E55E3B0070F98F /* SigninMap.h */,
+				DDF9589915E55E3B0070F98F /* SigninMap.m */,
+			);
+			path = object_maps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +415,32 @@
 				DDEEE46215E1781100DFA037 /* CreateQuestionViewController.m in Sources */,
 				DDEEE49915E1824200DFA037 /* CreateChoiceViewController.m in Sources */,
 				DDF955F815E3C8760070F98F /* RegisterViewController.m in Sources */,
+				DDF9585D15E5586D0070F98F /* SignInViewController.m in Sources */,
+				DDF9589A15E55E3B0070F98F /* ChoiceCommand.m in Sources */,
+				DDF9589B15E55E3B0070F98F /* PollCommand.m in Sources */,
+				DDF9589C15E55E3B0070F98F /* QuestionCommand.m in Sources */,
+				DDF9589D15E55E3B0070F98F /* RegistrationCommand.m in Sources */,
+				DDF9589E15E55E3B0070F98F /* SigninCommand.m in Sources */,
+				DDF9589F15E55E3B0070F98F /* ApiAuthentication.m in Sources */,
+				DDF958A015E55E3B0070F98F /* AuthenticationProvider.m in Sources */,
+				DDF958A115E55E3B0070F98F /* BasicAuthentication.m in Sources */,
+				DDF958A215E55E3B0070F98F /* SqliteCredentialStore.m in Sources */,
+				DDF958A315E55E3B0070F98F /* ApiBaseCommand.m in Sources */,
+				DDF958A415E55E3B0070F98F /* ApiError.m in Sources */,
+				DDF958A515E55E3B0070F98F /* RestConnection.m in Sources */,
+				DDF958A615E55E3B0070F98F /* NSDate+DateFromString.m in Sources */,
+				DDF958A715E55E3B0070F98F /* NSString+DateToString.m in Sources */,
+				DDF958A815E55E3B0070F98F /* Choice.m in Sources */,
+				DDF958A915E55E3B0070F98F /* Poll.m in Sources */,
+				DDF958AA15E55E3B0070F98F /* Question.m in Sources */,
+				DDF958AB15E55E3B0070F98F /* Registration.m in Sources */,
+				DDF958AC15E55E3B0070F98F /* Signin.m in Sources */,
+				DDF958AD15E55E3B0070F98F /* ChoiceMap.m in Sources */,
+				DDF958AE15E55E3B0070F98F /* ObjectMapperFactory.m in Sources */,
+				DDF958AF15E55E3B0070F98F /* PollMap.m in Sources */,
+				DDF958B015E55E3B0070F98F /* QuestionMap.m in Sources */,
+				DDF958B115E55E3B0070F98F /* RegistrationMap.m in Sources */,
+				DDF958B215E55E3B0070F98F /* SigninMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

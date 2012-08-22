@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 21/8/2012.
+//  Created by tastyphone on 22/8/2012.
 //
 
 
@@ -31,8 +31,7 @@
 - (id)mapInstance:(id)data {
 	Signin *instance = [[[Signin alloc] init] autorelease];
 	instance.username = [data objectForKey:@"username"];
-	instance.signinId = [data objectForKey:@"id"];
-	instance.email = [data objectForKey:@"email"];
+	instance.password = [data objectForKey:@"password"];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
 	return instance;
 }

@@ -5,9 +5,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Registration.h"
+#import "Poll.h"
 #import "ObjectMapProtocol.h"
 
-@interface RegistrationMap : NSObject <ObjectMapProtocol>
+@interface PollMap : NSObject <ObjectMapProtocol>
 
 @end

@@ -5,13 +5,13 @@
 //
 
 
-#import "RegistrationMap.h"
+#import "PollMap.h"
 #import "NSDate+DateFromString.h"
 
-@interface RegistrationMap (Private)
+@interface PollMap (Private)
 - (id)mapInstance:(id)data;
 @end
-@implementation RegistrationMap
+@implementation PollMap
 - (id)mapObject:(id)data {
 	if ([data objectForKey:@"objects"] != nil) {
 		NSMutableArray *items = [[[NSMutableArray alloc] init] autorelease];
@@ -29,12 +29,10 @@
 }
 
 - (id)mapInstance:(id)data {
-	Registration *instance = [[[Registration alloc] init] autorelease];
-	instance.username = [data objectForKey:@"username"];
-	instance.apiKey = [data objectForKey:@"api_key"];
-	instance.password = [data objectForKey:@"password"];
+	Poll *instance = [[[Poll alloc] init] autorelease];
 	instance.resourceUri = [data objectForKey:@"resource_uri"];
-	instance.registrationId = [[data objectForKey:@"id"] intValue];
+	instance.title = [data objectForKey:@"title"];
+	instance.pollId = [[data objectForKey:@"id"] intValue];
 	return instance;
 }
 

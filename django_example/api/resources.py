@@ -25,7 +25,7 @@ class SignInResource(ModelResource):
             'username': ('exact'),
             'password': ('exact'),
         }
-        fields = ('username', 'id', 'api_key', 'email', 'profile')
+        fields = ('username', 'password', 'api_key')
 
     def dehydrate(self, bundle):
         bundle.data['api_key'] = bundle.obj.api_key.key

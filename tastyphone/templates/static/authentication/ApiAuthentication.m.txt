@@ -22,6 +22,9 @@
 }
 
 - (void)saveCredentials:(NSString*)username withApiKey:(NSString*)apiKey {
+	if ([username length] > 0 && [apiKey length] > 0)
+		return;
+
 	NSDictionary *credentials = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects:username, apiKey, nil]
 															forKeys:[NSArray arrayWithObjects:@"key", @"value", nil]];
 	[_storage saveCredentials:credentials];

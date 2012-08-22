@@ -43,13 +43,19 @@
 	ApiAuthentication *apiAuth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
 	[apiAuth saveCredentials:((Registration*)object).username withApiKey:((Registration*)object).apiKey];
 	[self.view endEditing:YES];
+	
+	NSLog(@"registration details: u:%@ apikey: %@", ((Registration*)object).username, ((Registration*)object).apiKey);
+	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registered" message:@"you have signed up and you are signed in" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 - (void)apiErrorReceived:(ApiError *)error {
 	NSLog(@"oops");
-	UIAlertView *alerto = [[UIAlertView alloc] initWithTitle:@"failed to register" message:[error getSummary] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-	[alerto show];
-	[alerto release];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"failed to register" message:[error getSummary] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 	[self.view endEditing:YES];
 }
 

@@ -1,30 +1,29 @@
 //
-//  Question.m
+//  Poll.m
 //
 //  Created by tastyphone on 22/8/2012.
 //
 
-#import "Question.h"
+#import "Poll.h"
 
-@implementation Question
+@implementation Poll
 
-@synthesize question;
 @synthesize resourceUri;
-@synthesize questionId;
+@synthesize title;
 @synthesize pollId;
 
 
 - (id)init {
     if ((self = [super init])) {
-        question = [NSString new];
         resourceUri = [NSString new];
+        title = [NSString new];
     }
     return self;
 }
 
 - (void)dealloc {
-    [question release];
     [resourceUri release];
+    [title release];
     [super dealloc];
 }
 

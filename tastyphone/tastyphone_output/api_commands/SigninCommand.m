@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 21/8/2012.
+//  Created by tastyphone on 22/8/2012.
 //
 
 
@@ -25,11 +25,10 @@
 }
 
 - (NSDictionary*)dictionaryFromModel:(Signin*)aSignin {
-        NSArray *keys = [NSArray arrayWithObjects:@"username", @"id", @"email", nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"username", @"password", nil];
         NSArray *values = [NSArray arrayWithObjects:
         aSignin.username,
-        aSignin.signinId,
-        aSignin.email,
+        aSignin.password,
         nil];
         NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
         return dict;

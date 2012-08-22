@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 21/8/2012.
+//  Created by tastyphone on 22/8/2012.
 //
 
 #import "RESTConnection.h"
@@ -151,7 +151,6 @@
 - (NSURL *)getUrl:(NSString *)actionUrl
 {
 	NSMutableString *rawUri = [[NSMutableString alloc]initWithFormat:@"%@%@", kApiRootUrl, actionUrl];
-	api
 	
 	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
 	NSDictionary *authHeaders = [auth getAuthenticationHeaders];

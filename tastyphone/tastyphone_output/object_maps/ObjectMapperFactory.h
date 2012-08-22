@@ -1,7 +1,7 @@
 //
 //  ObjectMapperFactory.h
 //
-//  Created by tastyphone on 21/8/2012.
+//  Created by tastyphone on 22/8/2012.
 //
 
 #import <Foundation/Foundation.h>
@@ -9,6 +9,7 @@
 
 #import "RegistrationMap.h"
 #import "SigninMap.h"
+#import "PollMap.h"
 #import "QuestionMap.h"
 #import "ChoiceMap.h"
 
