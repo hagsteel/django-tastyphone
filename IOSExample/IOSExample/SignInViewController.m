@@ -31,6 +31,7 @@
 	Signin *signIn = [[Signin alloc] init];
 	signIn.username = self.signinField.text;
 	signIn.password = self.passwordField.text;
+	[_signInCommand getSigninByUsername:signIn.username Password:signIn.password];
 //	[_signInCommand get by username and password
 	[signIn release];
 }
@@ -38,11 +39,11 @@
 #pragma mark - sign in command
 
 - (void)dataReceived:(id)object {
-	
+	NSLog(@"we have object");
 }
 
 - (void)apiErrorReceived:(ApiError *)error {
-	
+	NSLog(@"we have error");
 }
 
 

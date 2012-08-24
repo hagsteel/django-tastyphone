@@ -398,7 +398,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="signIn:" destination="Uwe-wf-eUR" eventType="touchUpInside" id="e3k-sT-KmL"/>
+                                                        <action selector="signInToApi:" destination="Uwe-wf-eUR" eventType="touchUpInside" id="v0f-WU-LN9"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -548,6 +548,60 @@
             <point key="canvasLocation" x="-1509" y="418"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="ChoicesViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChoicesViewController.h"/>
+        </class>
+        <class className="CreateChoiceViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateChoiceViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="createChoice:"/>
+                <relationship kind="outlet" name="choiceDescription" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CreatePollViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatePollViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="createPoll:"/>
+                <relationship kind="outlet" name="pollTitle" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CreateQuestionViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateQuestionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="createQuestion:"/>
+                <relationship kind="outlet" name="questionName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="PollViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PollViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editPolls:"/>
+            </relationships>
+        </class>
+        <class className="QuestionViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionViewController.h"/>
+        </class>
+        <class className="RegisterViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="registerUser:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SignInViewController" superclassName="TableViewControllerWithLoader">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignInViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="signInToApi:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="signinField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TableViewControllerWithLoader" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewControllerWithLoader.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

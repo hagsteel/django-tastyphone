@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 22/8/2012.
+//  Created by tastyphone on 23/8/2012.
 //
 
 
@@ -37,10 +37,14 @@
     [self.connection makeGetRequest:@"/api/v1/poll/"];
 }
 
+
+
 - (void)getPoll:(NSString*)pk {
     NSString *uri = [NSString stringWithFormat:@"%@%@/", @"/api/v1/poll/", pk];
     [self.connection makeGetRequest:uri];
 }
+
+
 
 - (void)createPoll:(Poll*)aPoll {
     [self.connection makePostRequest:[self dictionaryFromModel:aPoll] withDestination:@"/api/v1/poll/"];

@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 22/8/2012.
+//  Created by tastyphone on 23/8/2012.
 //
 
 
@@ -11,9 +11,34 @@
 }
 
 - (void)getChoiceList;
+
+
+
 - (void)getChoice:(NSString*)pk;
-- (void)getChoiceByQuestion:(NSString*)question;
+
+
+- (void)getChoiceByQuestion:(NSString*)question ;
+
+
+
+
+
+
+
 - (void)createChoice:(Choice*)aChoice;
+
+
+
+
+
+
 - (void)updateChoice:(Choice*)aChoice withId:(NSString*)pk;
+
+
+
+
+
+
 - (void)deleteChoice:(NSString*)pk;
+
 @end

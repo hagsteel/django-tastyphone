@@ -59,7 +59,7 @@ def to_nsstring(field, prefix=None):
     if field['type'] == 'NSDate':
         return mark_safe('[NSString stringWithFormat:@"%%@", [NSDate stringFromDate:%s%s]]' % (prefix, field['field_name']))
 
-#    import ipdb; ipdb.set_trace()
+    # Add more types here !!TODO!!
     return 'MISSING'
 
 
@@ -68,3 +68,9 @@ def format_code(parser, token):
     nodelist = parser.parse(('endformat_code',))
     parser.delete_first_token()
     return FacelessNode(nodelist)
+
+
+@register.filter(name='to_uri_string')
+def to_uri_string(fields, endpoint=None, needs_autoescape=False, is_safe=False):
+    #[NSString stringWithFormat:@"{{ filters|to_uri_string:endpoint }}"]
+    return mark_safe('[NSString stringWithFormat:@"%s?%s=%%@", %s]' % (endpoint, '=%@&'.join([f for f in fields]), ', '.join([f for f in fields])))

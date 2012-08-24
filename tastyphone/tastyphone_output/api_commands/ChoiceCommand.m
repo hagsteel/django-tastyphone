@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 22/8/2012.
+//  Created by tastyphone on 23/8/2012.
 //
 
 
@@ -39,15 +39,20 @@
     [self.connection makeGetRequest:@"/api/v1/choice/"];
 }
 
+
+
 - (void)getChoice:(NSString*)pk {
     NSString *uri = [NSString stringWithFormat:@"%@%@/", @"/api/v1/choice/", pk];
     [self.connection makeGetRequest:uri];
 }
 
+
+
 - (void)getChoiceByQuestion:(NSString*)question {
-    NSString *uri = [NSString stringWithFormat:@"%@?question=%@", @"/api/v1/choice/", question];
+    NSString *uri = [NSString stringWithFormat:@"/api/v1/choice/?question=%@", question];
     [self.connection makeGetRequest:uri];
 }
+
 
 - (void)createChoice:(Choice*)aChoice {
     [self.connection makePostRequest:[self dictionaryFromModel:aChoice] withDestination:@"/api/v1/choice/"];

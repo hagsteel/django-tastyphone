@@ -17,7 +17,8 @@ class SignInResource(ModelResource):
     class Meta:
         resource_name = 'signin'
         queryset = User.objects.all()
-        allowed_methods = ['get']
+        detail_allowed_methods = ['get']
+        list_allowed_methods = ['get']
         always_return_data = True
         authorization = Authorization()
         limit = 20

@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 22/8/2012.
+//  Created by tastyphone on 23/8/2012.
 //
 
 
@@ -11,8 +11,32 @@
 }
 
 - (void)getPollList;
+
+
+
 - (void)getPoll:(NSString*)pk;
+
+
+
+
+
+
+
+
 - (void)createPoll:(Poll*)aPoll;
+
+
+
+
+
+
 - (void)updatePoll:(Poll*)aPoll withId:(NSString*)pk;
+
+
+
+
+
+
 - (void)deletePoll:(NSString*)pk;
+
 @end

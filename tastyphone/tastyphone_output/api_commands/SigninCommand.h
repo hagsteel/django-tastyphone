@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 22/8/2012.
+//  Created by tastyphone on 23/8/2012.
 //
 
 
@@ -10,8 +10,14 @@
 @interface SigninCommand : ApiBaseCommand {
 }
 
-- (void)getSigninList;
-- (void)getSignin:(NSString*)pk;
-- (void)getSigninByUsername:(NSString*)username;
-- (void)getSigninByPassword:(NSString*)password;
+
+
+
+
+- (void)getSigninByUsername:(NSString*)username Password:(NSString*)password ;
+
+
+
+
+
 @end

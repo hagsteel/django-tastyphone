@@ -14,26 +14,32 @@
 {% endfor %}
 
 {% for m in allowed_detailed_methods %}
-{% if m == 'get' %}
+    {% if m == 'get' %}
+        {% for o in objects %}{% if o.original_name == 'id' %}
 - (void)get{{ model_name }}:(NSString*)pk;
-{% if filters %}
-{% for f in filters %}
-- (void)get{{ model_name }}By{{f|title}}:(NSString*){{f}};
-{% endfor %}
-{% endif %}
-{% endif %}
+        {% endif %}{% endfor %}
+        {% for p in primitives %}{% if p.original_name == 'id' %}
+- (void)get{{ model_name }}:(NSString*)pk;
+        {% endif %}{% endfor %}
 
-{% if m == 'post' %}
+
+    {% if filters %}
+- (void)get{{ model_name }}By{% for f in filters %}{{f|title}}:(NSString*){{f}} {% endfor %};
+    {% endif %}
+
+    {% endif %}
+
+    {% if m == 'post' %}
 - (void)create{{ model_name }}:({{ model_name }}*)a{{ model_name }};
-{% endif %}
+    {% endif %}
 
-{% if m == 'put' %}
+    {% if m == 'put' %}
 - (void)update{{ model_name }}:({{ model_name }}*)a{{ model_name }} withId:(NSString*)pk;
-{% endif %}
+    {% endif %}
 
-{% if m == 'delete' %}
+    {% if m == 'delete' %}
 - (void)delete{{ model_name }}:(NSString*)pk;
-{% endif %}
+    {% endif %}
 {% endfor %}
 
 

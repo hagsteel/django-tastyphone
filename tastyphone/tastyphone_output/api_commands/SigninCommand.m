@@ -1,7 +1,7 @@
 //
 //  
 //
-//  Created by tastyphone on 22/8/2012.
+//  Created by tastyphone on 23/8/2012.
 //
 
 
@@ -34,22 +34,11 @@
         return dict;
 }
 
-- (void)getSigninList {
-    [self.connection makeGetRequest:@"/api/v1/signin/"];
-}
 
-- (void)getSignin:(NSString*)pk {
-    NSString *uri = [NSString stringWithFormat:@"%@%@/", @"/api/v1/signin/", pk];
-    [self.connection makeGetRequest:uri];
-}
 
-- (void)getSigninByUsername:(NSString*)username {
-    NSString *uri = [NSString stringWithFormat:@"%@?username=%@", @"/api/v1/signin/", username];
-    [self.connection makeGetRequest:uri];
-}
 
-- (void)getSigninByPassword:(NSString*)password {
-    NSString *uri = [NSString stringWithFormat:@"%@?password=%@", @"/api/v1/signin/", password];
+- (void)getSigninByUsername:(NSString*)username Password:(NSString*)password {
+    NSString *uri = [NSString stringWithFormat:@"/api/v1/signin/?username=%@&password=%@", username, password];
     [self.connection makeGetRequest:uri];
 }
 
