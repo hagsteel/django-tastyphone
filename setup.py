@@ -17,7 +17,7 @@ setup(
     license = "BSD",
     keywords = "tastypie tastyphone iphone rest api",
     url = "",
-    packages=['an_example_pypi_project', 'tests'],
+    packages=['tastyphone', ],
     long_description=read('README.rst'),
     classifiers=[
         "Development Status :: 3 - Alpha",
