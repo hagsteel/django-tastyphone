@@ -12,6 +12,8 @@ class Command(BaseCommand):
     help = 'Hello, this is a help'
 
     option_list = BaseCommand.option_list + (
+            make_option('--output', '-o', dest='output',
+                help='Set the output directory'),
             make_option('--user', '-u', dest='username',
                 help='Set the api username'),
             make_option('--apikey', '-k', dest='api_key',
@@ -27,6 +29,13 @@ class Command(BaseCommand):
         self.file_manager = FileManager()
 
     def handle(self, *args, **options):
+        output = options.get('output')
+        if output is None:
+            print '==========='
+            print 'ERROR:You have to specify an output directory'
+            print '==========='
+            return
+
         self.class_renderer = ClassRenderer(company_name=options.get('company_name'), authentication=options.get('authentication'))
         response = Client().get('/api/v1/?format=json')
         api_schema = simplejson.loads(response.content)

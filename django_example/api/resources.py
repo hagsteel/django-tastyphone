@@ -65,36 +65,6 @@ class RegistrationResource(ModelResource):
         return bundle
 
 
-#class UserResource(ModelResource):
-#    class Meta:
-#        queryset = User.objects.all()
-#        list_allowed_methods = ['get', 'post']
-#
-#    def prepend_urls(self):
-#        return [
-#            url(r"^(?P<resource_name>%s)/signin%s$" % (self._meta.resource_name, trailing_slash()), self.wrap_view('signin'), name="api_signin"),
-#        ]
-#
-#    def signin(self, request, **kwargs):
-#        self.method_check(request, allowed=['post'])
-#
-#        # Per https://docs.djangoproject.com/en/1.3/topics/auth/#django.contrib.auth.login...
-#        username = request.POST['username']
-#        password = request.POST['password']
-#        user = authenticate(username=username, password=password)
-#
-#        if user is not None:
-#            if user.is_active:
-#                login(request, user)
-#                return self.create_response(request, {'success': True})
-#            else:
-#                # Return a 'disabled account' error message
-#                return self.create_response(request, {'success': False})
-#        else:
-#            # Return an 'invalid login' error message.
-#            return self.create_response(request, {'success': False})
-
-
 class PollResource(ModelResource):
     id = fields.IntegerField(attribute='id', readonly=True)
 
