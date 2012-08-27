@@ -28,7 +28,7 @@ class FileManager(object):
         return file_name.title().replace('_', '')
 
     def get_or_create_directory(self, dir):
-        dir = os.path.join(os.path.dirname(__file__),
+        dir = os.path.join(os.path.dirname(os.path.realpath(manage.__file__)),
             os.path.join(self._root_dir, dir))
         if not os.path.exists(dir):
             os.makedirs(dir)
