@@ -5,7 +5,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         from os.path import abspath, dirname
         import sys
-        a = os.path.abspath(os.path.dirname(__file__))
+        import manage
+        a = os.path.dirname(os.path.realpath(manage.__file__))
         c = sys.path.insert(0, dirname(dirname(abspath(__file__))))
         b = os.path.abspath(os.path.dirname(__file__))
         print a

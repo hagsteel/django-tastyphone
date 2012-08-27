@@ -1,5 +1,5 @@
 import os
-
+import manage
 
 class FileManager(object):
 
@@ -10,10 +10,12 @@ class FileManager(object):
     _helpers_dir = 'helpers'
 
     def get_filename(self, directory, filename):
-        return os.path.abspath(os.path.join(os.path.dirname(__file__),
+        file_name = os.path.abspath(os.path.join(os.path.dirname(manage.__file__),
             os.pardir,
             directory,
             filename))
+#        import ipdb; ipdb.set_trace()
+        return file_name
 
     def write_file_to_disk(self, directory, file_name, data):
         if file_name.rfind('.txt') > 0:
