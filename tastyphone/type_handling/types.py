@@ -4,8 +4,9 @@ class DataTypes(object):
     type_map = {'string': 'NSString',
                 'integer': 'NSInteger',
                 'boolean': 'BOOL',
-                'datetime': 'NSDate',
                 'dict': 'NSMutableDictionary',
+                'datetime': 'NSDate',
+                'date': 'NSDate',
                 'time': 'NSDate',
                 'related': 'NSObject'}
 
