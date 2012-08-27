@@ -150,8 +150,10 @@
 	{% if 'api' in authentication %}
 	id<AuthenticationProtocol> auth = [[AuthenticationProvider sharedInstance] getApiAuthentication];
 	NSDictionary *authHeaders = [auth getAuthenticationHeaders];
-	[rawUri appendFormat:@"?username=%@", [authHeaders objectForKey:@"key"]];
-	[rawUri appendFormat:@"&api_key=%@", [authHeaders objectForKey:@"value"]];
+	if ([[authHeaders allKeys] count] > 0) {
+		[rawUri appendFormat:@"?username=%@", [authHeaders objectForKey:@"key"]];
+		[rawUri appendFormat:@"&api_key=%@", [authHeaders objectForKey:@"value"]];
+	}
 	{% endif %}
 	NSURL *url = [[[NSURL alloc] initWithString:rawUri] autorelease];
 	[rawUri release];
