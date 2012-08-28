@@ -9,6 +9,7 @@
 - (void)dataReceived:(id)object;
 - (void)apiErrorReceived:(ApiError *)error;
 - (void)connectionError;
+- (void)authenticationError;
 @end
 
 @interface ApiBaseCommand : NSObject <RESTConnectionDelegate> {

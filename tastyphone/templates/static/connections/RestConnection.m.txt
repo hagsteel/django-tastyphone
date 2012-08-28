@@ -126,7 +126,7 @@
 		}
 	} else {
 		if (_statuscode == 401) { // auth required
-			NSLog(@"auth required");
+			[self.delegate authenticationError];
 		} else {
 			ApiError *apiError = [[ApiError alloc] init];
 			if ([obj isKindOfClass:[NSDictionary class]]) {
