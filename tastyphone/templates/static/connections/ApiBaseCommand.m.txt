@@ -36,5 +36,11 @@
 	}
 }
 
+- (void)authenticationError {
+	if ([self.delegate respondsToSelector:@selector(authenticationError)]) {
+		[self.delegate authenticationError];
+	}
+}
+
 @end
 
