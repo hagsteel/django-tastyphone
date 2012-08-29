@@ -8,10 +8,12 @@
 #define kHostname @"127.0.0.1"
 #define kApiRootUrl @"http://127.0.0.1:8000"
 
-@protocol RESTConnectionDelegate <NSObject>
+@protocol ApiCommandDelegate <NSObject>
+@optional
 - (void)dataReceived:(id)object;
 - (void)apiErrorReceived:(ApiError *)error;
 - (void)connectionError;
+- (void)authenticationError;
 @end
 
 @interface RESTConnection : NSObject <NSURLConnectionDataDelegate> {
@@ -22,7 +24,7 @@
 	NSInteger _statuscode;
 }
 
-@property (nonatomic, assign) id<RESTConnectionDelegate> delegate;
+@property (nonatomic, assign) id<ApiCommandDelegate> delegate;
 
 - (id)initWithTargetClass:(Class)theClass;
 - (void)makeGetRequest:(NSString *)destination;

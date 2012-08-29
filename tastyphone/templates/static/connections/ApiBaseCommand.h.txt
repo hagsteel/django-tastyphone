@@ -4,15 +4,7 @@
 #import <Foundation/Foundation.h>
 #import "RESTConnection.h"
 
-@protocol ApiCommandDelegate <NSObject>
-@optional
-- (void)dataReceived:(id)object;
-- (void)apiErrorReceived:(ApiError *)error;
-- (void)connectionError;
-- (void)authenticationError;
-@end
-
-@interface ApiBaseCommand : NSObject <RESTConnectionDelegate> {
+@interface ApiBaseCommand : NSObject <ApiCommandDelegate> {
 	id<ApiCommandDelegate> _delegate;
 @protected
 	RESTConnection *_connection;
