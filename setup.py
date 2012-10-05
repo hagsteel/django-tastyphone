@@ -15,7 +15,7 @@ setup(
     keywords = "tastypie tastyphone iphone rest api",
     url = "",
     packages=['tastyphone', ],
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
