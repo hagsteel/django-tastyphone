@@ -2,6 +2,10 @@
 Create Objective-C code from Tasty pie schema
 =======
 
+
+This project is no longer supported since a lot has changed and there are better products to do this
+--------------------------------------------
+
 The easiest way to get started is to look at the example.
 
 At the moment related resources is not managed via the api.
